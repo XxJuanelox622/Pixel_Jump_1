@@ -1,3 +1,11 @@
 res://nivel0.tscn
 res://personaje.tscn
 res://plataforma.gd
+res://moneda.gd
+res://Objeto.tscn
+res://personaje.gd
+res://Contador.tscn
+res://contador.gd
+res://game_manager.gd
+res://Level2.tscn
+res://Level1.tscn
