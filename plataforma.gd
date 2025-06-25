@@ -1,6 +1,6 @@
 extends Area2D
 
-enum TipoPlataforma {FIJA, OSCILATORIA, FRAGIL, REBOTE}
+enum TipoPlataforma {FIJA, OSCILATORIA, FRAGIL, REBOTE,PICOS}
 @export var tipo: TipoPlataforma = TipoPlataforma.FIJA;
 @export var fuerza_rebote := 2.0
 
@@ -19,8 +19,9 @@ func actualizar_plataforma():
 		TipoPlataforma.FRAGIL:
 			$Sprite2D.modulate = Color.RED
 		TipoPlataforma.REBOTE:
-			$Sprite2D.modulate = Color.YELLOW
-		
+			$Sprite2D.modulate = Color.GOLD
+		TipoPlataforma.PICOS:
+			$Sprite2D.modulate = Color.PURPLE
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -31,6 +32,8 @@ func _on_body_entered(body: Node2D) -> void:
 			TipoPlataforma.FRAGIL:
 				await get_tree().create_timer(0.5).timeout
 				queue_free()
+			TipoPlataforma.PICOS:
+				get_tree().reload_current_scene()
 			TipoPlataforma.REBOTE:
 				if body.has_method("puede_rebotar"):
 					body.puede_rebotar(fuerza_rebote)
@@ -44,6 +47,7 @@ func oscilar():
 	tween.tween_property(self,"position:x",position.x - 100,2)
 	tween.set_loops()
 	
-	
+func picos():
+	get_tree().reload_current_scene()
 	
 	
