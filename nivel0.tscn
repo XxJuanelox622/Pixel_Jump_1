@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3hy3uk8vrjfc"]
+[gd_scene load_steps=8 format=3 uid="uid://d3hy3uk8vrjfc"]
 
 [ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="1_jx64p"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="2_jx64p"]
 [ext_resource type="PackedScene" uid="uid://biofxf4yqfjwu" path="res://plataforma.tscn" id="3_wmlxa"]
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="4_wmlxa"]
-[ext_resource type="PackedScene" uid="uid://dc4q7l1bjqldp" path="res://Objeto.tscn" id="5_hjuvm"]
 [ext_resource type="PackedScene" uid="uid://b6ymp714b6m4c" path="res://hub.tscn" id="6_3213g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elrdk"]
@@ -47,8 +46,7 @@ position = Vector2(178, 84)
 position = Vector2(375, 106)
 
 [node name="Plataforma3" parent="." instance=ExtResource("3_wmlxa")]
-position = Vector2(257, 106)
-tipo = 2
+position = Vector2(249, 200)
 
 [node name="Plataforma4" parent="." instance=ExtResource("3_wmlxa")]
 position = Vector2(448, 79)
@@ -73,12 +71,6 @@ tipo = 2
 
 [node name="Plataforma8" parent="." instance=ExtResource("3_wmlxa")]
 position = Vector2(746, 108)
-
-[node name="Node2D" parent="." instance=ExtResource("5_hjuvm")]
-position = Vector2(256, 111)
-
-[node name="Node2D2" parent="." instance=ExtResource("5_hjuvm")]
-position = Vector2(163, 102)
 
 [node name="hub" parent="." instance=ExtResource("6_3213g")]
 

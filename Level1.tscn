@@ -1,17 +1,127 @@
-[gd_scene load_steps=3 format=3 uid="uid://y48o61oob1a"]
+[gd_scene load_steps=8 format=3 uid="uid://y48o61oob1a"]
 
+[ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="1_dn5ey"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="1_mc20k"]
 [ext_resource type="PackedScene" uid="uid://b6ymp714b6m4c" path="res://hub.tscn" id="2_cove1"]
+[ext_resource type="PackedScene" uid="uid://biofxf4yqfjwu" path="res://plataforma.tscn" id="2_lmyl5"]
+[ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="4_mlbie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3sxq"]
+size = Vector2(4847, 660.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dn5ey"]
+radius = 27.074
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Portal" type="Area2D" parent="."]
+[node name="Reset_area2" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Portal"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reset_area2"]
+position = Vector2(454.5, 1693.75)
+shape = SubResource("RectangleShape2D_s3sxq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/Sprite2D"]
+[node name="Portal1" type="Area2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Portal1"]
+position = Vector2(468, 343)
+scale = Vector2(2.38477, 1.99707)
+texture = ExtResource("1_dn5ey")
+
+[node name="Plataforma" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(43, 62)
+
+[node name="Plataforma2" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(85, 444)
+tipo = 4
+
+[node name="Plataforma3" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(157, 469)
+
+[node name="Plataforma4" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(240, 507)
+
+[node name="Plataforma5" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(330, 480)
+tipo = 3
+
+[node name="Plataforma6" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(589, 333)
+tipo = 2
+
+[node name="Plataforma7" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(504, 373)
+tipo = 2
+
+[node name="Plataforma8" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(674, 373)
+tipo = 2
+
+[node name="Plataforma9" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(763, 354)
+tipo = 2
+
+[node name="Plataforma10" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(838, 632)
+
+[node name="Plataforma11" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(935, 631)
+
+[node name="Plataforma12" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(999, 633)
+tipo = 1
+
+[node name="Plataforma13" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1132, 634)
+tipo = 3
+
+[node name="Plataforma14" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1228, 599)
+tipo = 3
+
+[node name="Plataforma15" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1323, 545)
+tipo = 3
+
+[node name="Plataforma16" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1410, 504)
+tipo = 4
+
+[node name="Plataforma17" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1504, 478)
+
+[node name="Plataforma18" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1596, 436)
+
+[node name="Plataforma19" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1685, 396)
+tipo = 3
+
+[node name="Plataforma20" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1553, 211)
+tipo = 2
+
+[node name="Plataforma21" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1458, 180)
+tipo = 2
+
+[node name="Plataforma22" parent="Portal1" instance=ExtResource("2_lmyl5")]
+position = Vector2(1356, 142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal1"]
+position = Vector2(1328, 29)
+shape = SubResource("CircleShape2D_dn5ey")
 
 [node name="Personaje" parent="." instance=ExtResource("1_mc20k")]
 position = Vector2(40, 26)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1327, 29)
+scale = Vector2(1.63889, 1.59375)
+texture = ExtResource("4_mlbie")
+hframes = 8
+
 [node name="hub" parent="." instance=ExtResource("2_cove1")]
+
+[connection signal="body_entered" from="Reset_area2" to="Personaje" method="_on_reset_area_2_body_entered"]
+[connection signal="body_entered" from="Portal1" to="Personaje" method="_on_portal1_body_entered"]

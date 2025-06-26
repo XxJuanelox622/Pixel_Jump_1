@@ -35,10 +35,26 @@ func pickup_mon():
 	get_node("/root/world/HUB").update_count(puntaje)
 
 
+@warning_ignore("unused_parameter")
 func _on_Portal_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Level1.tscn")
 	pass # Replace with function body.
 
 
+@warning_ignore("unused_parameter")
 func _on_reset_area_2_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()
+	pass # Replace with function body.
+
+func _on_portal1_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Level2.tscn")
+	pass # Replace with function body.
+
+func _on_portal_2_body_exited(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Level0.tscn")
+	pass # Replace with function body.
+
+
+func _on_reset_area_3_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()
 	pass # Replace with function body.
