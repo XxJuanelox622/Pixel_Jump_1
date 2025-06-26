@@ -22,4 +22,4 @@ shape = SubResource("RectangleShape2D_ex07k")
 [node name="Personaje" parent="." instance=ExtResource("2_s8dg4")]
 position = Vector2(-2107, -245)
 
-[connection signal="body_entered" from="reset_area3" to="Personaje" method="_on_resetarea_body_entered"]
+[connection signal="body_exited" from="reset_area3" to="Personaje" method="_on_reset_area_3_body_exited"]

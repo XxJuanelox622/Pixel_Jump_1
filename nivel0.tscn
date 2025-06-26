@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3hy3uk8vrjfc"]
+[gd_scene load_steps=9 format=3 uid="uid://d3hy3uk8vrjfc"]
 
 [ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="1_jx64p"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="2_jx64p"]
 [ext_resource type="PackedScene" uid="uid://biofxf4yqfjwu" path="res://plataforma.tscn" id="3_wmlxa"]
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="4_wmlxa"]
 [ext_resource type="PackedScene" uid="uid://dc4q7l1bjqldp" path="res://Objeto.tscn" id="5_hjuvm"]
+[ext_resource type="PackedScene" uid="uid://b6ymp714b6m4c" path="res://hub.tscn" id="6_3213g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elrdk"]
 size = Vector2(1963, 330.5)
@@ -21,19 +22,19 @@ position = Vector2(222, 445)
 shape = SubResource("RectangleShape2D_elrdk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(415.75, 42.5)
-scale = Vector2(0.58667, 0.645508)
+position = Vector2(388.5, -55.4999)
+scale = Vector2(0.690918, 0.836914)
 texture = ExtResource("4_wmlxa")
 
-[node name="door" type="Area2D" parent="."]
+[node name="Portal" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="door"]
+[node name="Sprite2D" type="Sprite2D" parent="Portal"]
 position = Vector2(885, 82)
 texture = ExtResource("1_jx64p")
 hframes = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
-position = Vector2(884, 82)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+position = Vector2(885, 82)
 shape = SubResource("RectangleShape2D_jx64p")
 
 [node name="Personaje" parent="." instance=ExtResource("2_jx64p")]
@@ -44,7 +45,6 @@ position = Vector2(178, 84)
 
 [node name="Plataforma2" parent="." instance=ExtResource("3_wmlxa")]
 position = Vector2(375, 106)
-tipo = 1
 
 [node name="Plataforma3" parent="." instance=ExtResource("3_wmlxa")]
 position = Vector2(257, 106)
@@ -52,26 +52,27 @@ tipo = 2
 
 [node name="Plataforma4" parent="." instance=ExtResource("3_wmlxa")]
 position = Vector2(448, 79)
-tipo = 3
+tipo = 2
 fuerza_rebote = 1.5
 
 [node name="Plataforma5" parent="." instance=ExtResource("3_wmlxa")]
 position = Vector2(316, 141)
-tipo = 4
+tipo = 1
 
 [node name="Plataforma6" parent="." instance=ExtResource("3_wmlxa")]
-position = Vector2(542, 77)
+position = Vector2(508, 119)
+tipo = 4
 
 [node name="Plataforma7" parent="." instance=ExtResource("3_wmlxa")]
-position = Vector2(615, 152)
+position = Vector2(576, 110)
 tipo = 3
 
 [node name="Plataforma9" parent="." instance=ExtResource("3_wmlxa")]
-position = Vector2(709, 69)
+position = Vector2(668, 95)
 tipo = 2
 
 [node name="Plataforma8" parent="." instance=ExtResource("3_wmlxa")]
-position = Vector2(809, 114)
+position = Vector2(746, 108)
 
 [node name="Node2D" parent="." instance=ExtResource("5_hjuvm")]
 position = Vector2(256, 111)
@@ -79,5 +80,11 @@ position = Vector2(256, 111)
 [node name="Node2D2" parent="." instance=ExtResource("5_hjuvm")]
 position = Vector2(163, 102)
 
+[node name="hub" parent="." instance=ExtResource("6_3213g")]
+
+[node name="Plataforma10" parent="." instance=ExtResource("3_wmlxa")]
+position = Vector2(824, 126)
+tipo = 1
+
 [connection signal="body_entered" from="reset_area" to="Personaje" method="_on_reset_area_body_entered"]
-[connection signal="body_entered" from="door" to="Personaje" method="_on_door_body_entered"]
+[connection signal="body_entered" from="Portal" to="Personaje" method="_on_Portal_body_entered"]

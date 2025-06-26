@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://y48o61oob1a"]
+[gd_scene load_steps=3 format=3 uid="uid://y48o61oob1a"]
+
+[ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="1_mc20k"]
+[ext_resource type="PackedScene" uid="uid://b6ymp714b6m4c" path="res://hub.tscn" id="2_cove1"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Portal" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Portal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/Sprite2D"]
+
+[node name="Personaje" parent="." instance=ExtResource("1_mc20k")]
+position = Vector2(40, 26)
+
+[node name="hub" parent="." instance=ExtResource("2_cove1")]

@@ -4,7 +4,7 @@ var velocidad = 200
 var brinco = -400
 var gravedad = 1000
 var jugador_cerca = false
-
+var puntaje = 0
 func _ready():
 	add_to_group("jugador")
 
@@ -22,13 +22,23 @@ func _physics_process(delta):
 		velocity.y = brinco
 	move_and_slide()
 
+@warning_ignore("unused_parameter")
 func _on_reset_area_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
 
-func _on_door_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://Level2.tscn")
-
-
-func _on_reset_area3_body_entered(body: Node2D) -> void:
+@warning_ignore("unused_parameter")
+func _on_reset_area_3_body_exited(body: Node2D) -> void:
 	get_tree().reload_current_scene()
+	
+func pickup_mon():
+	puntaje += 1
+	get_node("/root/world/HUB").update_count(puntaje)
+
+
+func _on_Portal_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Level1.tscn")
+	pass # Replace with function body.
+
+
+func _on_reset_area_2_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.

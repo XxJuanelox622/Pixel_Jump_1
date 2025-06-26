@@ -1,10 +1,10 @@
 CollisionShape2D
 Area2D
 Sprite2D
-Node
-OpenXRBindingModifierEditor
-Node2D
 Label
 TextureRect
 CanvasLayer
+Node
+OpenXRBindingModifierEditor
+Node2D
 TileMap

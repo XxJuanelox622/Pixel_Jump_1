@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6ymp714b6m4c"]
+
+[ext_resource type="Script" uid="uid://dclr8qdxd3uj1" path="res://hub.gd" id="1_hjueh"]
+[ext_resource type="Texture2D" uid="uid://b4kbmsfe417el" path="res://coin.png" id="2_w7r13"]
+[ext_resource type="FontFile" uid="uid://b7fa4wtpv15kj" path="res://PixelOperator8-Bold.ttf" id="3_w7r13"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysrp0"]
+atlas = ExtResource("2_w7r13")
+region = Rect2(0, 0, 19, 16)
+
+[node name="hub" type="CanvasLayer"]
+script = ExtResource("1_hjueh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 80.0
+texture = SubResource("AtlasTexture_ysrp0")
+
+[node name="espacio_valor" type="Label" parent="."]
+offset_left = 85.0
+offset_top = 34.0
+offset_right = 118.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("3_w7r13")
+theme_override_font_sizes/font_size = 32
+text = "X"
+
+[node name="Mon_valor" type="Label" parent="."]
+offset_left = 123.0
+offset_top = 34.0
+offset_right = 187.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("3_w7r13")
+theme_override_font_sizes/font_size = 32
+text = "00"
