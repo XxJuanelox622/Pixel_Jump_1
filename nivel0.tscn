@@ -1,16 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3hy3uk8vrjfc"]
+[gd_scene load_steps=10 format=3 uid="uid://d3hy3uk8vrjfc"]
 
 [ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="1_jx64p"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="2_jx64p"]
 [ext_resource type="PackedScene" uid="uid://biofxf4yqfjwu" path="res://plataforma.tscn" id="3_wmlxa"]
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="4_wmlxa"]
 [ext_resource type="PackedScene" uid="uid://b6ymp714b6m4c" path="res://hub.tscn" id="6_3213g"]
+[ext_resource type="PackedScene" uid="uid://dc4q7l1bjqldp" path="res://Objeto.tscn" id="6_x37vy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elrdk"]
 size = Vector2(1963, 330.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx64p"]
 size = Vector2(26, 26)
+
+[sub_resource type="GDScript" id="GDScript_3213g"]
+script/source = "extends Node
+"
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,6 +29,8 @@ shape = SubResource("RectangleShape2D_elrdk")
 position = Vector2(388.5, -55.4999)
 scale = Vector2(0.690918, 0.836914)
 texture = ExtResource("4_wmlxa")
+
+[node name="hub" parent="." instance=ExtResource("6_3213g")]
 
 [node name="Portal" type="Area2D" parent="."]
 
@@ -72,11 +79,16 @@ tipo = 2
 [node name="Plataforma8" parent="." instance=ExtResource("3_wmlxa")]
 position = Vector2(746, 108)
 
-[node name="hub" parent="." instance=ExtResource("6_3213g")]
-
 [node name="Plataforma10" parent="." instance=ExtResource("3_wmlxa")]
 position = Vector2(824, 126)
 tipo = 1
+
+[node name="Node2D" parent="." instance=ExtResource("6_x37vy")]
+position = Vector2(163, 100)
+
+[node name="Node2D2" parent="." instance=ExtResource("6_x37vy")]
+position = Vector2(376, 116)
+script = SubResource("GDScript_3213g")
 
 [connection signal="body_entered" from="reset_area" to="Personaje" method="_on_reset_area_body_entered"]
 [connection signal="body_entered" from="Portal" to="Personaje" method="_on_Portal_body_entered"]

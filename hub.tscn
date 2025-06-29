@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6ymp714b6m4c"]
+[gd_scene load_steps=6 format=3 uid="uid://b6ymp714b6m4c"]
 
 [ext_resource type="Script" uid="uid://dclr8qdxd3uj1" path="res://hub.gd" id="1_hjueh"]
 [ext_resource type="Texture2D" uid="uid://b4kbmsfe417el" path="res://coin.png" id="2_w7r13"]
 [ext_resource type="FontFile" uid="uid://b7fa4wtpv15kj" path="res://PixelOperator8-Bold.ttf" id="3_w7r13"]
+[ext_resource type="Script" uid="uid://d3dja25ibwhi1" path="res://game_contador.gd" id="4_ysrp0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysrp0"]
 atlas = ExtResource("2_w7r13")
@@ -35,3 +36,6 @@ offset_bottom = 66.0
 theme_override_fonts/font = ExtResource("3_w7r13")
 theme_override_font_sizes/font_size = 32
 text = "00"
+
+[node name="GameContador" type="Node" parent="."]
+script = ExtResource("4_ysrp0")

@@ -1,12 +1,9 @@
 extends Area2D
 
-var jugador_cerca = false
+@onready var contador : Node = get_node("/root/GameContador")
 
-func _on_body_entered(body):
-	if body.name == "jugador":
-		body.pickup_mon()
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("jugador"):
+		contador.incrementa_un_punto()
 		queue_free()
-
-func _on_body_exited(body):
-	if body.name == "jugador":
-		jugador_cerca = false
+	pass 

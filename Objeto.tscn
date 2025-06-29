@@ -11,6 +11,10 @@ radius = 6.08276
 [node name="Moneda" type="Area2D" parent="."]
 script = ExtResource("1_8wn4v")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Moneda"]
+position = Vector2(1, -43)
+shape = SubResource("CircleShape2D_negcn")
+
 [node name="Sprite2D" type="Sprite2D" parent="Moneda"]
 position = Vector2(1, -43)
 scale = Vector2(0.0249023, 0.0239258)
@@ -18,9 +22,4 @@ texture = ExtResource("2_pdlro")
 hframes = 3
 vframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moneda"]
-position = Vector2(1, -43)
-shape = SubResource("CircleShape2D_negcn")
-
 [connection signal="body_entered" from="Moneda" to="Moneda" method="_on_body_entered"]
-[connection signal="body_exited" from="Moneda" to="Moneda" method="_on_body_exited"]

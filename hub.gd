@@ -1,4 +1,4 @@
 extends CanvasLayer
-
-func update_count(mon: int):
-	$Mon_valor.text = str(mon)
+var puntos: int = 0
+func update_count(puntos: int):
+	$Mon_valor.text = str(puntos)
