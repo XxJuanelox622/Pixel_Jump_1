@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b1t0k8wllty1a" path="res://moneda.tscn" id="5_psxy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ex07k"]
-size = Vector2(6468, 985)
+size = Vector2(6468, 1023)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ex07k"]
 radius = 16.0
@@ -80,6 +80,12 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
+[node name="reset_area3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reset_area3"]
+position = Vector2(27, 1510.5)
+shape = SubResource("RectangleShape2D_ex07k")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(31.5001, -393.5)
 scale = Vector2(3.16455, 2.78418)
@@ -90,12 +96,6 @@ texture = ExtResource("1_q04gf")
 [node name="Contador" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_nc7oo")
-
-[node name="reset_area3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="reset_area3"]
-position = Vector2(27, 1529.5)
-shape = SubResource("RectangleShape2D_ex07k")
 
 [node name="Personaje" parent="." instance=ExtResource("2_s8dg4")]
 position = Vector2(-3, 1)
@@ -109,7 +109,7 @@ tipo = 2
 
 [node name="Plataforma3" parent="." instance=ExtResource("3_ex07k")]
 position = Vector2(245, 326)
-tipo = 2
+tipo = 3
 
 [node name="Plataforma4" parent="." instance=ExtResource("3_ex07k")]
 position = Vector2(370, 569)
@@ -117,7 +117,7 @@ tipo = 4
 
 [node name="Plataforma5" parent="." instance=ExtResource("3_ex07k")]
 position = Vector2(506, 253)
-tipo = 1
+tipo = 3
 
 [node name="Plataforma6" parent="." instance=ExtResource("3_ex07k")]
 position = Vector2(685, 253)
@@ -258,6 +258,7 @@ tipo = 3
 
 [node name="Plataforma45" parent="." instance=ExtResource("3_ex07k")]
 position = Vector2(-713, 728)
+tipo = 3
 
 [node name="Plataforma46" parent="." instance=ExtResource("3_ex07k")]
 position = Vector2(-909, 645)
@@ -299,7 +300,7 @@ frame_progress = 0.913036
 position = Vector2(65, 63)
 
 [node name="Moneda2" parent="." instance=ExtResource("5_psxy2")]
-position = Vector2(375, 294)
+position = Vector2(497, 201)
 
 [node name="Moneda3" parent="." instance=ExtResource("5_psxy2")]
 position = Vector2(878, 88)

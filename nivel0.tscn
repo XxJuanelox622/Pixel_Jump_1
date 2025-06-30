@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d3hy3uk8vrjfc"]
+[gd_scene load_steps=21 format=3 uid="uid://d3hy3uk8vrjfc"]
 
 [ext_resource type="Script" uid="uid://xfg8dcuvkm51" path="res://contador.gd" id="1_3213g"]
 [ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="1_jx64p"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="4_wmlxa"]
 [ext_resource type="PackedScene" uid="uid://b1t0k8wllty1a" path="res://moneda.tscn" id="5_hjuvm"]
 [ext_resource type="PackedScene" uid="uid://ba6fuasphyfsf" path="res://hub.tscn" id="6_3213g"]
+[ext_resource type="AudioStream" uid="uid://qsti6uh8u7hh" path="res://mario-coin.mp3" id="9_ch5yf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elrdk"]
 size = Vector2(1963, 330.5)
@@ -93,8 +94,6 @@ offset_top = 14.0
 offset_right = 226.0
 offset_bottom = 49.0
 theme_override_fonts/font = ExtResource("2_x37vy")
-text = "Has conceguido
-X monedas"
 
 [node name="reset_area" type="Area2D" parent="."]
 
@@ -169,6 +168,10 @@ position = Vector2(577, -36)
 position = Vector2(825, 74)
 
 [node name="Textos" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ch5yf")
+volume_db = 1.981
 
 [connection signal="body_entered" from="reset_area" to="Personaje" method="_on_reset_area_body_entered"]
 [connection signal="body_entered" from="Portal" to="Personaje" method="_on_Portal_body_entered"]

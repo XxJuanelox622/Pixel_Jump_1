@@ -1,12 +1,8 @@
-res://Objeto.tscn
 res://nivel0.tscn
 res://Level1.tscn
 res://Level2.tscn
 res://personaje.tscn
-res://hub.tscn
-res://moneda.gd
 res://moneda.tscn
-res://contador.gd
+res://hub.tscn
 res://personaje.gd
-res://hub.gd
-res://plataforma.gd
+res://moneda.gd

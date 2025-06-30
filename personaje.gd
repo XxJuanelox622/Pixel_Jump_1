@@ -28,8 +28,7 @@ func _on_reset_area_body_entered(body: Node2D) -> void:
 func _on_reset_area_2_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
 
-@warning_ignore("unused_parameter")
-func _on_reset_area_3_body_exited(body: Node2D) -> void:
+func _on_reset_area_3_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
 
 # portales ( Siguiente Nivel )
