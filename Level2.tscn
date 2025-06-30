@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://buj40gi1ure7b"]
+[gd_scene load_steps=17 format=3 uid="uid://buj40gi1ure7b"]
 
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="1_q04gf"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="2_s8dg4"]
 [ext_resource type="PackedScene" uid="uid://biofxf4yqfjwu" path="res://plataforma.tscn" id="3_ex07k"]
 [ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="4_psxy2"]
+[ext_resource type="PackedScene" uid="uid://b1t0k8wllty1a" path="res://moneda.tscn" id="5_psxy2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ex07k"]
 size = Vector2(6468, 985)
@@ -104,7 +105,7 @@ tipo = 2
 
 [node name="Plataforma4" parent="." instance=ExtResource("3_ex07k")]
 position = Vector2(370, 569)
-tipo = 3
+tipo = 4
 
 [node name="Plataforma5" parent="." instance=ExtResource("3_ex07k")]
 position = Vector2(506, 253)
@@ -284,7 +285,63 @@ shape = SubResource("CircleShape2D_ex07k")
 position = Vector2(-787, 285)
 sprite_frames = SubResource("SpriteFrames_fvkd4")
 autoplay = "default"
-frame_progress = 0.63138
+frame_progress = 0.913036
+
+[node name="Moneda" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(65, 63)
+
+[node name="Moneda2" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(375, 294)
+
+[node name="Moneda3" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(878, 88)
+
+[node name="Moneda4" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(993, 243)
+
+[node name="Moneda5" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(1350, 93)
+
+[node name="Moneda6" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(1844, 86)
+
+[node name="Moneda7" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(2499, 115)
+
+[node name="Moneda8" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(2368, 387)
+
+[node name="Moneda9" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(1924, 644)
+
+[node name="Moneda10" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(1425, 781)
+
+[node name="Moneda11" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(678, 724)
+
+[node name="Moneda12" parent="." instance=ExtResource("5_psxy2")]
+position = Vector2(-708, 524)
+
+[node name="Plataforma52" parent="." instance=ExtResource("3_ex07k")]
+position = Vector2(314, 570)
+tipo = 4
+
+[node name="Plataforma53" parent="." instance=ExtResource("3_ex07k")]
+position = Vector2(254, 570)
+tipo = 4
+
+[node name="Plataforma54" parent="." instance=ExtResource("3_ex07k")]
+position = Vector2(192, 570)
+tipo = 4
+
+[node name="Plataforma55" parent="." instance=ExtResource("3_ex07k")]
+position = Vector2(-105, 570)
+tipo = 4
+
+[node name="Plataforma56" parent="." instance=ExtResource("3_ex07k")]
+position = Vector2(-58, 571)
+tipo = 4
 
 [connection signal="body_entered" from="reset_area3" to="Personaje" method="_on_reset_area_3_body_entered"]
 [connection signal="body_exited" from="Plataforma51/Portal2" to="Personaje" method="_on_portal_2_body_exited"]
