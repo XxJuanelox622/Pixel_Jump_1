@@ -1,24 +1,25 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1751174169
-1.png::CompressedTexture2D/CompressedTexture2D::9047234969279464094::1751174014::1751174170::1::::<><><>0<>0<>ede6e04157172389d1d653319da75c1a<>res://.godot/imported/1.png-515c813a180ba5fd2e61c8e75c4cac47.ctex::
-coin.png::CompressedTexture2D/CompressedTexture2D::4442624026622142323::1751174014::1751174170::1::::<><><>0<>0<>5241bd55e98a28969f5c9f51c0f53c00<>res://.godot/imported/coin.png-7e710de472b75b3653c3283ef5153eb4.ctex::
-freelavatileset-Sheet.png::CompressedTexture2D/CompressedTexture2D::5934951952683385336::1751174014::1751174170::1::::<><><>0<>0<>446369a8591214aa9cb429849e0d08e5<>res://.godot/imported/freelavatileset-Sheet.png-c82235cb56cd59de60d462a1025418ce.ctex::
-hub.gd::GDScript::7323439859784080204::1751174014::0::1::::<>CanvasLayer<><>0<>0<><>::
-hub.tscn::PackedScene::4612577015623626932::1751174014::0::1::::<><><>0<>0<><>::uid://dclr8qdxd3uj1::::res://hub.gd<>uid://b4kbmsfe417el::::res://coin.png<>uid://b7fa4wtpv15kj::::res://PixelOperator8-Bold.ttf
-icon.svg::CompressedTexture2D/CompressedTexture2D::6485462296784530099::1751174014::1751174170::1::::<><><>0<>0<>2cdb5e4fd6cfda897b91d09f138b21f0<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-Level1.tscn::PackedScene::51365574502944584::1751174014::0::1::::<><><>0<>0<><>::uid://h3f6u6r8wbft::::res://Preview.png<>uid://cnc60ffuvqs6m::::res://personaje.tscn<>uid://b6ymp714b6m4c::::res://hub.tscn<>uid://biofxf4yqfjwu::::res://plataforma.tscn<>uid://dtx5ch3e11g0n::::res://Ship_portal_32x32.png
-Level2.tscn::PackedScene::3810582722585394393::1751174014::0::1::::<><><>0<>0<><>::uid://h3f6u6r8wbft::::res://Preview.png<>uid://cnc60ffuvqs6m::::res://personaje.tscn<>uid://biofxf4yqfjwu::::res://plataforma.tscn<>uid://dtx5ch3e11g0n::::res://Ship_portal_32x32.png
-Moeda_Coin (1).png::CompressedTexture2D/CompressedTexture2D::1410080175259507892::1751174014::1751174171::1::::<><><>0<>0<>3f03184ccd601fafc7889c9731a58c44<>res://.godot/imported/Moeda_Coin (1).png-cd1f021e07e2448c0886c83e9a7a783f.ctex::
-moneda.gd::GDScript::2548551492325690058::1751174014::0::1::::<>Area2D<><>0<>0<><>::
-nivel0.tscn::PackedScene::9140508594721518408::1751174014::0::1::::<><><>0<>0<><>::uid://dtx5ch3e11g0n::::res://Ship_portal_32x32.png<>uid://cnc60ffuvqs6m::::res://personaje.tscn<>uid://biofxf4yqfjwu::::res://plataforma.tscn<>uid://h3f6u6r8wbft::::res://Preview.png<>uid://b6ymp714b6m4c::::res://hub.tscn
-Objeto.tscn::PackedScene::7360535928492192081::1751174014::0::1::::<><><>0<>0<><>::uid://bcksjg72aj4fe::::res://moneda.gd<>uid://udb2xr8h1ho3::::res://Moeda_Coin (1).png
-personaje.gd::GDScript::5685128970510505034::1751174014::0::1::::<>CharacterBody2D<><>0<>0<><>::
-personaje.tscn::PackedScene::5691352233090320514::1751174014::0::1::::<><><>0<>0<><>::uid://cm86ijr7xlmic::::res://personaje.gd<>uid://dvupl8ygq0dl6::::res://Vampires1_Walk_full.png
-PixelOperator8-Bold.ttf::FontFile/FontFile::4642838542479316629::1751174014::1751174170::1::::<><><>0<>0<>b97662d0e066136884098200f5b4e102<>res://.godot/imported/PixelOperator8-Bold.ttf-ff90df5798b9fe83cdc81f461b206f3a.fontdata::
-plataforma.gd::GDScript::8692433118225517856::1751174014::0::1::::<>Area2D<><>0<>0<><>::
-plataforma.tscn::PackedScene::2977177688105959948::1751174014::0::1::::<><><>0<>0<><>::uid://dv3xdrvb1mr1i::::res://plataforma.gd<>uid://duc6esvkko7f3::::res://Platform.png
-Platform.png::CompressedTexture2D/CompressedTexture2D::8569058027628950742::1751174014::1751174170::1::::<><><>0<>0<>bb708c86b4c5788facbefc2f44644920<>res://.godot/imported/Platform.png-542605f8d0c23af6a571efe7214c2e6a.ctex::
-Preview.png::CompressedTexture2D/CompressedTexture2D::549484526328091617::1751174014::1751174170::1::::<><><>0<>0<>73e0c8b04c2c87f019ace7eda43b7b62<>res://.godot/imported/Preview.png-06a071281403101d77fdf26254295d0d.ctex::
-README.md::TextFile::-1::1751174014::0::1::::<><><>0<>0<><>::
-Ship_portal_32x32.png::CompressedTexture2D/CompressedTexture2D::8542156261051587815::1751174014::1751174170::1::::<><><>0<>0<>e0b4bc8f56949aa238b7d5e5e3a124df<>res://.godot/imported/Ship_portal_32x32.png-b53bd35b22d5de674fefc9249b6bfb97.ctex::
-Vampires1_Walk_full.png::CompressedTexture2D/CompressedTexture2D::8675447491824470697::1751174014::1751174170::1::::<><><>0<>0<>66d41fde05071d6747b2d65bb8d37743<>res://.godot/imported/Vampires1_Walk_full.png-c7d753ca2031748ace2a33488d6eb316.ctex::
+::res://::1751268410
+1.png::CompressedTexture2D/CompressedTexture2D::9047234969279464094::1751268376::1751268411::1::::<><><>0<>0<>ede6e04157172389d1d653319da75c1a<>res://.godot/imported/1.png-515c813a180ba5fd2e61c8e75c4cac47.ctex::
+coin.png::CompressedTexture2D/CompressedTexture2D::4442624026622142323::1751268376::1751268411::1::::<><><>0<>0<>5241bd55e98a28969f5c9f51c0f53c00<>res://.godot/imported/coin.png-7e710de472b75b3653c3283ef5153eb4.ctex::
+freelavatileset-Sheet.png::CompressedTexture2D/CompressedTexture2D::5934951952683385336::1751268376::1751268411::1::::<><><>0<>0<>446369a8591214aa9cb429849e0d08e5<>res://.godot/imported/freelavatileset-Sheet.png-c82235cb56cd59de60d462a1025418ce.ctex::
+game_contador.gd::GDScript::9131290723981566598::1751268376::0::1::::<>Node<><>0<>0<><>::
+hub.gd::GDScript::7323439859784080204::1751268376::0::1::::<>CanvasLayer<><>0<>0<><>::
+hub.tscn::PackedScene::4612577015623626932::1751268376::0::1::::<><><>0<>0<><>::uid://dclr8qdxd3uj1::::res://hub.gd<>uid://b4kbmsfe417el::::res://coin.png<>uid://b7fa4wtpv15kj::::res://PixelOperator8-Bold.ttf<>uid://d3dja25ibwhi1::::res://game_contador.gd
+icon.svg::CompressedTexture2D/CompressedTexture2D::6485462296784530099::1751268376::1751268411::1::::<><><>0<>0<>2cdb5e4fd6cfda897b91d09f138b21f0<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+Level1.tscn::PackedScene::51365574502944584::1751268376::0::1::::<><><>0<>0<><>::uid://h3f6u6r8wbft::::res://Preview.png<>uid://cnc60ffuvqs6m::::res://personaje.tscn<>uid://b6ymp714b6m4c::::res://hub.tscn<>uid://biofxf4yqfjwu::::res://plataforma.tscn<>uid://dtx5ch3e11g0n::::res://Ship_portal_32x32.png
+Level2.tscn::PackedScene::3810582722585394393::1751268376::0::1::::<><><>0<>0<><>::uid://h3f6u6r8wbft::::res://Preview.png<>uid://cnc60ffuvqs6m::::res://personaje.tscn<>uid://biofxf4yqfjwu::::res://plataforma.tscn<>uid://dtx5ch3e11g0n::::res://Ship_portal_32x32.png
+Moeda_Coin (1).png::CompressedTexture2D/CompressedTexture2D::1410080175259507892::1751268376::1751268412::1::::<><><>0<>0<>3f03184ccd601fafc7889c9731a58c44<>res://.godot/imported/Moeda_Coin (1).png-cd1f021e07e2448c0886c83e9a7a783f.ctex::
+moneda.gd::GDScript::2548551492325690058::1751268376::0::1::::<>Area2D<><>0<>0<><>::
+nivel0.tscn::PackedScene::9140508594721518408::1751268376::0::1::::<><><>0<>0<><>::uid://dtx5ch3e11g0n::::res://Ship_portal_32x32.png<>uid://cnc60ffuvqs6m::::res://personaje.tscn<>uid://biofxf4yqfjwu::::res://plataforma.tscn<>uid://h3f6u6r8wbft::::res://Preview.png<>uid://b6ymp714b6m4c::::res://hub.tscn<>uid://dc4q7l1bjqldp::::res://Objeto.tscn
+Objeto.tscn::PackedScene::7360535928492192081::1751268376::0::1::::<><><>0<>0<><>::uid://bcksjg72aj4fe::::res://moneda.gd<>uid://udb2xr8h1ho3::::res://Moeda_Coin (1).png
+personaje.gd::GDScript::5685128970510505034::1751268376::0::1::::<>CharacterBody2D<><>0<>0<><>::
+personaje.tscn::PackedScene::5691352233090320514::1751268376::0::1::::<><><>0<>0<><>::uid://cm86ijr7xlmic::::res://personaje.gd<>uid://dvupl8ygq0dl6::::res://Vampires1_Walk_full.png
+PixelOperator8-Bold.ttf::FontFile/FontFile::4642838542479316629::1751268376::1751268411::1::::<><><>0<>0<>b97662d0e066136884098200f5b4e102<>res://.godot/imported/PixelOperator8-Bold.ttf-ff90df5798b9fe83cdc81f461b206f3a.fontdata::
+plataforma.gd::GDScript::8692433118225517856::1751268376::0::1::::<>Area2D<><>0<>0<><>::
+plataforma.tscn::PackedScene::2977177688105959948::1751268376::0::1::::<><><>0<>0<><>::uid://dv3xdrvb1mr1i::::res://plataforma.gd<>uid://duc6esvkko7f3::::res://Platform.png
+Platform.png::CompressedTexture2D/CompressedTexture2D::8569058027628950742::1751268376::1751268411::1::::<><><>0<>0<>bb708c86b4c5788facbefc2f44644920<>res://.godot/imported/Platform.png-542605f8d0c23af6a571efe7214c2e6a.ctex::
+Preview.png::CompressedTexture2D/CompressedTexture2D::549484526328091617::1751268376::1751268411::1::::<><><>0<>0<>73e0c8b04c2c87f019ace7eda43b7b62<>res://.godot/imported/Preview.png-06a071281403101d77fdf26254295d0d.ctex::
+README.md::TextFile::-1::1751268376::0::1::::<><><>0<>0<><>::
+Ship_portal_32x32.png::CompressedTexture2D/CompressedTexture2D::8542156261051587815::1751268376::1751268411::1::::<><><>0<>0<>e0b4bc8f56949aa238b7d5e5e3a124df<>res://.godot/imported/Ship_portal_32x32.png-b53bd35b22d5de674fefc9249b6bfb97.ctex::
+Vampires1_Walk_full.png::CompressedTexture2D/CompressedTexture2D::8675447491824470697::1751268376::1751268411::1::::<><><>0<>0<>66d41fde05071d6747b2d65bb8d37743<>res://.godot/imported/Vampires1_Walk_full.png-c7d753ca2031748ace2a33488d6eb316.ctex::

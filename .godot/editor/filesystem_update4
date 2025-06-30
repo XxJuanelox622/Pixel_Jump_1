@@ -5,11 +5,8 @@ res://Level2.tscn
 res://personaje.tscn
 res://hub.tscn
 res://moneda.gd
+res://moneda.tscn
 res://contador.gd
 res://personaje.gd
-res://contador.tscn
-res://node.gd
-res://game_contador.gd
-res://contador_game.gd
-res://contador_game.tscn
 res://hub.gd
+res://plataforma.gd

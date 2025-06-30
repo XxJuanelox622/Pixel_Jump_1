@@ -1,41 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6ymp714b6m4c"]
+[gd_scene load_steps=5 format=3 uid="uid://ba6fuasphyfsf"]
 
-[ext_resource type="Script" uid="uid://dclr8qdxd3uj1" path="res://hub.gd" id="1_hjueh"]
+[ext_resource type="Script" uid="uid://bnuh7jecglyu1" path="res://hub.gd" id="1_hjueh"]
 [ext_resource type="Texture2D" uid="uid://b4kbmsfe417el" path="res://coin.png" id="2_w7r13"]
 [ext_resource type="FontFile" uid="uid://b7fa4wtpv15kj" path="res://PixelOperator8-Bold.ttf" id="3_w7r13"]
-[ext_resource type="Script" uid="uid://d3dja25ibwhi1" path="res://game_contador.gd" id="4_ysrp0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysrp0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7r13"]
 atlas = ExtResource("2_w7r13")
-region = Rect2(0, 0, 19, 16)
+region = Rect2(0, 0, 16.3589, 16.3039)
 
-[node name="hub" type="CanvasLayer"]
+[node name="Hub" type="CanvasLayer"]
 script = ExtResource("1_hjueh")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 32.0
-offset_top = 16.0
-offset_right = 96.0
-offset_bottom = 80.0
-texture = SubResource("AtlasTexture_ysrp0")
+offset_left = -6.0
+offset_top = -5.0
+offset_right = 58.0
+offset_bottom = 59.0
+pivot_offset = Vector2(20, 20)
+texture = SubResource("AtlasTexture_w7r13")
 
-[node name="espacio_valor" type="Label" parent="."]
-offset_left = 85.0
-offset_top = 34.0
-offset_right = 118.0
-offset_bottom = 66.0
+[node name="Label" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 12.0
+offset_right = 88.0
+offset_bottom = 45.0
 theme_override_fonts/font = ExtResource("3_w7r13")
 theme_override_font_sizes/font_size = 32
 text = "X"
 
-[node name="Mon_valor" type="Label" parent="."]
-offset_left = 123.0
-offset_top = 34.0
-offset_right = 187.0
-offset_bottom = 66.0
+[node name="ContadorMonedas" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 11.0
+offset_right = 153.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_w7r13")
 theme_override_font_sizes/font_size = 32
 text = "00"
-
-[node name="GameContador" type="Node" parent="."]
-script = ExtResource("4_ysrp0")

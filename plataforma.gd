@@ -19,7 +19,7 @@ func actualizar_plataforma():
 		TipoPlataforma.FRAGIL:
 			$Sprite2D.modulate = Color.RED
 		TipoPlataforma.REBOTE:
-			$Sprite2D.modulate = Color.GOLD
+			$Sprite2D.modulate = Color.AQUA
 		TipoPlataforma.PICOS:
 			$Sprite2D.modulate = Color.PURPLE
 

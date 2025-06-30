@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://buj40gi1ure7b"]
+[gd_scene load_steps=16 format=3 uid="uid://buj40gi1ure7b"]
 
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="1_q04gf"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="2_s8dg4"]
@@ -11,18 +11,82 @@ size = Vector2(6468, 985)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ex07k"]
 radius = 16.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex07k"]
+atlas = ExtResource("4_psxy2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psxy2"]
+atlas = ExtResource("4_psxy2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwdpc"]
+atlas = ExtResource("4_psxy2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6faey"]
+atlas = ExtResource("4_psxy2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc7oo"]
+atlas = ExtResource("4_psxy2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6x3wt"]
+atlas = ExtResource("4_psxy2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3453u"]
+atlas = ExtResource("4_psxy2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46pvi"]
+atlas = ExtResource("4_psxy2")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvkd4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex07k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psxy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwdpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6faey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc7oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6x3wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3453u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46pvi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(31.5001, -393.5)
+scale = Vector2(3.16455, 2.78418)
+texture = ExtResource("1_q04gf")
 
 [node name="reset_area3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="reset_area3"]
 position = Vector2(27, 1529.5)
 shape = SubResource("RectangleShape2D_ex07k")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(31.5001, -393.5)
-scale = Vector2(3.16455, 2.78418)
-texture = ExtResource("1_q04gf")
 
 [node name="Personaje" parent="." instance=ExtResource("2_s8dg4")]
 position = Vector2(-3, 1)
@@ -212,14 +276,15 @@ tipo = 4
 
 [node name="Portal2" type="Area2D" parent="Plataforma51"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Plataforma51/Portal2"]
-position = Vector2(-787, 286)
-texture = ExtResource("4_psxy2")
-hframes = 8
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma51/Portal2"]
 position = Vector2(-787, 285)
 shape = SubResource("CircleShape2D_ex07k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Plataforma51/Portal2"]
+position = Vector2(-787, 285)
+sprite_frames = SubResource("SpriteFrames_fvkd4")
+autoplay = "default"
+frame_progress = 0.63138
 
 [connection signal="body_entered" from="reset_area3" to="Personaje" method="_on_reset_area_3_body_entered"]
 [connection signal="body_exited" from="Plataforma51/Portal2" to="Personaje" method="_on_portal_2_body_exited"]

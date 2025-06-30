@@ -1,23 +1,100 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3hy3uk8vrjfc"]
+[gd_scene load_steps=20 format=3 uid="uid://d3hy3uk8vrjfc"]
 
+[ext_resource type="Script" uid="uid://xfg8dcuvkm51" path="res://contador.gd" id="1_3213g"]
 [ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="1_jx64p"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="2_jx64p"]
+[ext_resource type="FontFile" uid="uid://b7fa4wtpv15kj" path="res://PixelOperator8-Bold.ttf" id="2_x37vy"]
 [ext_resource type="PackedScene" uid="uid://biofxf4yqfjwu" path="res://plataforma.tscn" id="3_wmlxa"]
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="4_wmlxa"]
-[ext_resource type="PackedScene" uid="uid://b6ymp714b6m4c" path="res://hub.tscn" id="6_3213g"]
-[ext_resource type="PackedScene" uid="uid://dc4q7l1bjqldp" path="res://Objeto.tscn" id="6_x37vy"]
+[ext_resource type="PackedScene" uid="uid://b1t0k8wllty1a" path="res://moneda.tscn" id="5_hjuvm"]
+[ext_resource type="PackedScene" uid="uid://ba6fuasphyfsf" path="res://hub.tscn" id="6_3213g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elrdk"]
 size = Vector2(1963, 330.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3213g"]
+atlas = ExtResource("1_jx64p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x37vy"]
+atlas = ExtResource("1_jx64p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv0ge"]
+atlas = ExtResource("1_jx64p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch5yf"]
+atlas = ExtResource("1_jx64p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ektr7"]
+atlas = ExtResource("1_jx64p")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfrah"]
+atlas = ExtResource("1_jx64p")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa14v"]
+atlas = ExtResource("1_jx64p")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i4vh"]
+atlas = ExtResource("1_jx64p")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4t5kb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3213g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x37vy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv0ge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch5yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ektr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfrah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa14v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i4vh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jx64p"]
 size = Vector2(26, 26)
 
-[sub_resource type="GDScript" id="GDScript_3213g"]
-script/source = "extends Node
-"
-
 [node name="Node2D" type="Node2D"]
+
+[node name="Hub" parent="." instance=ExtResource("6_3213g")]
+
+[node name="Contador" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_3213g")
+
+[node name="EtiquetaPuntuacion" type="Label" parent="Contador"]
+offset_left = 14.0
+offset_top = 14.0
+offset_right = 226.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("2_x37vy")
+text = "Has conceguido
+X monedas"
 
 [node name="reset_area" type="Area2D" parent="."]
 
@@ -30,14 +107,13 @@ position = Vector2(388.5, -55.4999)
 scale = Vector2(0.690918, 0.836914)
 texture = ExtResource("4_wmlxa")
 
-[node name="hub" parent="." instance=ExtResource("6_3213g")]
-
 [node name="Portal" type="Area2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Portal"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Portal"]
 position = Vector2(885, 82)
-texture = ExtResource("1_jx64p")
-hframes = 8
+sprite_frames = SubResource("SpriteFrames_4t5kb")
+autoplay = "default"
+frame_progress = 0.886034
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2(885, 82)
@@ -83,12 +159,16 @@ position = Vector2(746, 108)
 position = Vector2(824, 126)
 tipo = 1
 
-[node name="Node2D" parent="." instance=ExtResource("6_x37vy")]
-position = Vector2(163, 100)
+[node name="Moneda" parent="." instance=ExtResource("5_hjuvm")]
+position = Vector2(449, 38)
 
-[node name="Node2D2" parent="." instance=ExtResource("6_x37vy")]
-position = Vector2(376, 116)
-script = SubResource("GDScript_3213g")
+[node name="Moneda2" parent="." instance=ExtResource("5_hjuvm")]
+position = Vector2(577, -36)
+
+[node name="Moneda3" parent="." instance=ExtResource("5_hjuvm")]
+position = Vector2(825, 74)
+
+[node name="Textos" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="reset_area" to="Personaje" method="_on_reset_area_body_entered"]
 [connection signal="body_entered" from="Portal" to="Personaje" method="_on_Portal_body_entered"]

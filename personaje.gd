@@ -7,6 +7,7 @@ var gravedad = 1000
 func _ready():
 	add_to_group("jugador")
 
+# moviento Basicos del (jugador) , ( moverse de i, D, Saltar,etc)
 func _physics_process(delta):
 	var direccion = Input.get_axis("ui_left","ui_right")
 	velocity.x = direccion * velocidad
@@ -18,8 +19,13 @@ func _physics_process(delta):
 		velocity.y = brinco
 	move_and_slide()
 
+# Reiniciar (jugador)
 @warning_ignore("unused_parameter")
 func _on_reset_area_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()
+
+@warning_ignore("unused_parameter")
+func _on_reset_area_2_body_entered(body: Node2D) -> void:
 	get_tree().reload_current_scene()
 
 @warning_ignore("unused_parameter")
@@ -30,24 +36,9 @@ func _on_reset_area_3_body_exited(body: Node2D) -> void:
 @warning_ignore("unused_parameter")
 func _on_Portal_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Level1.tscn")
-	pass # Replace with function body.
 
 func _on_portal1_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Level2.tscn")
-	pass # Replace with function body.
 
 func _on_portal_2_body_exited(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Level0.tscn")
-	pass # Replace with function body.
-	
-@warning_ignore("unused_parameter")
-func _on_reset_area_2_body_entered(body: Node2D) -> void:
-	get_tree().reload_current_scene()
-	pass # Replace with function body.
-
-
-
-
-func _on_reset_area_3_body_entered(body: Node2D) -> void:
-	get_tree().reload_current_scene()
-	pass # Replace with function body.
