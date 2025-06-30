@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://buj40gi1ure7b"]
+[gd_scene load_steps=19 format=3 uid="uid://buj40gi1ure7b"]
 
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="1_q04gf"]
+[ext_resource type="PackedScene" uid="uid://ba6fuasphyfsf" path="res://hub.tscn" id="2_6faey"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="2_s8dg4"]
 [ext_resource type="PackedScene" uid="uid://biofxf4yqfjwu" path="res://plataforma.tscn" id="3_ex07k"]
+[ext_resource type="Script" uid="uid://xfg8dcuvkm51" path="res://contador.gd" id="3_nc7oo"]
 [ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="4_psxy2"]
 [ext_resource type="PackedScene" uid="uid://b1t0k8wllty1a" path="res://moneda.tscn" id="5_psxy2"]
 
@@ -82,6 +84,12 @@ animations = [{
 position = Vector2(31.5001, -393.5)
 scale = Vector2(3.16455, 2.78418)
 texture = ExtResource("1_q04gf")
+
+[node name="Hub" parent="." instance=ExtResource("2_6faey")]
+
+[node name="Contador" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_nc7oo")
 
 [node name="reset_area3" type="Area2D" parent="."]
 

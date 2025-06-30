@@ -1,10 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://y48o61oob1a"]
+[gd_scene load_steps=19 format=3 uid="uid://y48o61oob1a"]
 
 [ext_resource type="Texture2D" uid="uid://h3f6u6r8wbft" path="res://Preview.png" id="1_dn5ey"]
 [ext_resource type="PackedScene" uid="uid://cnc60ffuvqs6m" path="res://personaje.tscn" id="1_mc20k"]
 [ext_resource type="PackedScene" uid="uid://ba6fuasphyfsf" path="res://hub.tscn" id="2_cove1"]
 [ext_resource type="PackedScene" uid="uid://biofxf4yqfjwu" path="res://plataforma.tscn" id="2_lmyl5"]
+[ext_resource type="Script" uid="uid://xfg8dcuvkm51" path="res://contador.gd" id="2_mlbie"]
 [ext_resource type="Texture2D" uid="uid://dtx5ch3e11g0n" path="res://Ship_portal_32x32.png" id="4_mlbie"]
+[ext_resource type="PackedScene" uid="uid://b1t0k8wllty1a" path="res://moneda.tscn" id="6_s3sxq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3sxq"]
 size = Vector2(4847, 660.5)
@@ -79,6 +81,10 @@ radius = 15.0333
 [node name="Node2D" type="Node2D"]
 
 [node name="Hub" parent="." instance=ExtResource("2_cove1")]
+
+[node name="Contador" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_mlbie")
 
 [node name="Reset_area2" type="Area2D" parent="."]
 
@@ -184,8 +190,26 @@ tipo = 2
 [node name="Plataforma22" parent="Portal1" instance=ExtResource("2_lmyl5")]
 position = Vector2(1356, 142)
 
+[node name="Moneda" parent="Portal1" instance=ExtResource("6_s3sxq")]
+position = Vector2(763, 266)
+
+[node name="Moneda2" parent="Portal1" instance=ExtResource("6_s3sxq")]
+position = Vector2(933, 531)
+
+[node name="Moneda3" parent="Portal1" instance=ExtResource("6_s3sxq")]
+position = Vector2(1594, 379)
+
+[node name="Moneda4" parent="Portal1" instance=ExtResource("6_s3sxq")]
+position = Vector2(1549, 158)
+
 [node name="Personaje" parent="." instance=ExtResource("1_mc20k")]
 position = Vector2(40, 26)
+
+[node name="Moneda" parent="." instance=ExtResource("6_s3sxq")]
+position = Vector2(165, 74)
+
+[node name="Moneda2" parent="." instance=ExtResource("6_s3sxq")]
+position = Vector2(497, 307)
 
 [connection signal="body_entered" from="Reset_area2" to="Personaje" method="_on_reset_area_2_body_entered"]
 [connection signal="body_entered" from="Portal1" to="Personaje" method="_on_portal1_body_entered"]
