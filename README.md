@@ -1,6 +1,6 @@
 # PIXEL JUMP
 
-## BY Yaretzy Adali & Juan Carlos
+#### BY Yaretzy Adali & Juan Carlos
 
 ## Recursos Utilizados (imagenes, sonidos, etc)
  
