@@ -1,6 +1,6 @@
 # PIXEL JUMP
 
-+ BY Yaretzy Adali & Juan Carlos
+### BY Yaretzy Adali & Juan Carlos
  
 Es un juego De Plataformas Que Esta Desarrollado En Godot. Donde Eres un Vampiro Y Tienes Que Saltar Diferentes Plataformas Como
 (Rebote, Osilatoria, Frajil, Fija Y de Reinicio)  Al Final De Cada Nivel Hay Un Portal Al Tocarlo Te teletramsporta Al Siguiente
