@@ -1,10 +1,10 @@
 # PIXEL JUMP
 
- BY Yaretzy Adali & Juan Carlos
++ BY Yaretzy Adali & Juan Carlos
  
-Es un juego de plataformas que esta desarrollado en godot. donde rees un vampiro y tienes qeu saltar diferentes plataformas como
-(Rebote, Osilatoria, Frajil, Fija Y de Reinicio)  al final de cada nivel hay un portal al tocarlo te teletramsporta al siguiente
-nivel el cual es mas dificil que el anterior
+Es un juego De Plataformas Que Esta Desarrollado En Godot. Donde Eres un Vampiro Y Tienes Que Saltar Diferentes Plataformas Como
+(Rebote, Osilatoria, Frajil, Fija Y de Reinicio)  Al Final De Cada Nivel Hay Un Portal Al Tocarlo Te teletramsporta Al Siguiente
+Nivel el Cual Es Mas Dificil Que El Anterior
 
 ## Caracteristicas
 
