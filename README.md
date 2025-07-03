@@ -8,8 +8,17 @@ Nivel el Cual Es Mas Dificil Que El Anterior
 
 ## Caracteristicas
 
--Mecanicas Basicas Del Jugaador ( Saltar, Moverse de Izquierda a Derecha, Colliciones)
+- Mecanicas Basicas Del Jugaador ( Saltar, Moverse de Izquierda a Derecha, Colliciones)
 
--Control Por Teclado
+- Control Por Teclado
 
--Diseño de niveles Donde la Dificultad aumenta Con Cada Nivel
+- Diseño de niveles Donde la Dificultad aumenta Con Cada Nivel
+
+ ## Tecnologias
+ - Motor:Godot Engine [Version]
+ -  Lenguajes: GDScript
+ -  Plataforma: Windows
+ -  App: Visual Code & Github
+
+   ## Capturas De Pantalla
+   
