@@ -4,7 +4,7 @@
 
 ## Recursos Utilizados (imagenes, sonidos, etc)
 #### Personaje
-![Personaje.]
+![Personaje.](https://github.com/XxJuanelox622/Pixel_Jump_1/blob/main/Vampires1_Walk_full.png?raw=true)
 #### Fondo
 
 #### Obejeto
