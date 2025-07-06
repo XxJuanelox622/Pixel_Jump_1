@@ -6,7 +6,7 @@
 #### Personaje
 ![Personaje.](https://github.com/XxJuanelox622/Pixel_Jump_1/blob/main/Vampires1_Walk_full.png?raw=true)
 #### Fondo
-![fondo.]
+![fondo.](https://github.com/XxJuanelox622/Pixel_Jump_1/blob/main/Preview.png?raw=true)
 #### Obejeto
 ![coin.](https://github.com/XxJuanelox622/Pixel_Jump_1/blob/main/coin.png?raw=true)
 #### Plataformas
