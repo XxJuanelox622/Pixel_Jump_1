@@ -19,64 +19,71 @@ Nivel el Cual Es Mas Dificil Que El Anterior
 #### Portal
 ![Portal.](https://github.com/XxJuanelox622/Pixel_Jump_1/blob/main/Ship_portal_32x32.png?raw=true)
 
-##
+## Descripción de cada escena (nivel, plataforma, personaje, etc y una imagen referente)
 
 ### 🎮 Nivel 0:  - Practica
 
-#### Descripción General
-Este nivel está diseñado como un plataforma en 2D, ambientado en una cueva de tonos rojos intensos,
+### Descripción General
+
+Este nivel está diseñado como un juegos de plataforma en 2D, ambientado en una cueva de tonos rojos intensos,
 que le da un aspecto misterioso y desafiante. El objetivo principal del jugador es recolectar monedas
-animadas mientras avanza por el escenario, saltando por las diferentes plataformas y finalmente llegar 
-al portal para avnzar de nivel.
+ mientras avanza por el escenario, saltando por las diferentes plataformas y finalmente llegar 
+al portal para avnzar de nivel. 
 
 #### Estructura de Nodos
 
-🔹 Node2D (Nodo Principal)
-Es el nodo raíz que organiza todos los elementos del nivel. Dentro de este nodo se encuentran el jugador, plataformas, monedas, el HUD, zonas especiales y el portal.
+- Node2D (Nodo Principal)
+Es el nodo raíz que organiza todos los elementos del nivel. Dentro de este nodo se encuentran el jugador,
+plataformas, monedas, el HUD, zonas especiales y el portal.
 
-#### Hub
-Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye:
+### Hub
+- Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye:
 
-Contador de monedas (Label o Sprite2D): Muestra cuántas monedas ha recolectado el jugador (por defecto inicia en "x00").
+Contador de monedas ( 2 labels donde un label es x y el otro es 00 ): Muestra cuántas monedas ha recolectado
+el jugador (por defecto inicia en "x00").
 
-#### Moneda
-Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
+### Moneda
 
-Se incrementa el contador del HUD.
+- Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
 
-La moneda desaparece con una animación y/o sonido.
+- Se incrementa el contador del HUD.
 
-Estructura típica de la moneda:
+- Estructura de la moneda:
 
 Area2D: Nodo base para detección de colisiones.
 
 CollisionShape2D: Define el área de detección.
 
-AnimatedSprite2D: Muestra una animación de la moneda girando o brillando.
+AnimatedSprite2D: Muestra una animación de la moneda girando.
 
 Se utiliza la señal body_entered para detectar al jugador y ejecutar la recolección.
 
-#### reset_area
-Zona que detecta si el jugador cae. Al entrar en ella, probablemente se reinicie el nivel o se devuelva al jugador al punto de inicio. Incluye:
+### reset_area
+
+- Zona que detecta si el jugador cae. Al entrar en ella,  se reinicie el nivel o se devuelva al jugador
+ al punto de inicio. Incluye:
 
 CollisionShape2D: Detecta colisiones.
 
 Sprite2D: Representación visual del área de reinicio.
 
-#### Portal
-Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa. Contiene:
+### Portal
 
-AnimatedSprite2D: Puede mostrar animaciones de brillo, giro o parpadeo.
+- Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa. Contiene:
+
+AnimatedSprite2D: Le da la animacion al poprtal
 
 CollisionShape2D: Detecta si el jugador ha llegado al portal.
 
-##### Personaje
-El jugador principal, ubicado inicialmente sobre una de las plataformas. Es controlado por el usuario y puede caminar, saltar y recolectar monedas.
+### Personaje
+- El jugador principal, ubicado inicialmente sobre una de las plataformas. Es controlado por el usuario y
+-  puede caminar, saltar y recolectar monedas al pasar en ellas.
 
-#### Plataforma, Plataforma2, etc.
-Son los elementos sobre los que el jugador se mueve. Están colocadas a distintas alturas y posiciones para generar retos de salto y navegación.
+### Plataforma, Plataforma2, etc.
+- Son los elementos sobre los que el jugador se mueve. Están colocadas a distintas alturas y posiciones
+-  para generar retos de salto y navegación.
 
- #### Imagen Referente
+ ### Imagen Referente
 (Coloca aquí la imagen que ya proporcionaste del nivel. Úsala como referencia visual en tu entrega).
 
 
