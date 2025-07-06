@@ -1,17 +1,17 @@
-# PIXEL JUMP
+# 🎮 PIXEL-JUMP
 
 #### BY Yaretzy Adali & Juan Carlos
 
 ## Recursos Utilizados (imagenes, sonidos, etc)
-### Personaje
+#### Personaje
+![Personaje.]
+#### Fondo
 
-### Fondo
+#### Obejeto
 
-### Obejeto
+#### Plataformas
 
-### Plataformas
-
-### Portal
+###]# Portal
 
 
 
@@ -29,7 +29,7 @@ Nivel el Cual Es Mas Dificil Que El Anterior
 
 - Diseño de niveles Donde la Dificultad aumenta Con Cada Nivel
 
- ## Tecnologias
+ ## 🛠️ Tecnologias
  - Motor:Godot Engine [Version]
  -  Lenguajes: GDScript
  -  Plataforma: Windows
