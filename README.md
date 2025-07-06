@@ -36,7 +36,7 @@ al portal para avnzar de nivel.
 Es el nodo raíz que organiza todos los elementos del nivel. Dentro de este nodo se encuentran el jugador,
 plataformas, monedas, el HUD, zonas especiales y el portal.
 
-### Hub
+### 🧩 Hub
 - Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye:
 
 Contador de monedas ( tiene un texturerect y 2 labels donde un label es x y el otro es 00 ): Muestra cuántas monedas ha recolectado
@@ -67,7 +67,7 @@ CollisionShape2D: Detecta colisiones.
 
 Sprite2D: Representación visual del área de reinicio.
 
-### Portal
+###  🚪 Portal
 
 - Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa. Contiene:
 
@@ -75,13 +75,22 @@ AnimatedSprite2D: Le da la animacion al poprtal
 
 CollisionShape2D: Detecta si el jugador ha llegado al portal.
 
-### Personaje
+### 🧍Personaje
 - El jugador principal, ubicado inicialmente sobre una de las plataformas. Es controlado por el usuario y
--  puede caminar, saltar y recolectar monedas al pasar en ellas.
+ puede caminar, saltar y recolectar monedas al pasar en ellas.
 
-### Plataforma, Plataforma2, etc.
-- Son los elementos sobre los que el jugador se mueve. Están colocadas a distintas alturas y posiciones
--  para generar retos de salto y navegación.
+### 🧱 Tipos de Plataformas en el Nivel
+
+Fija: El jugador puede quedarse sobre ella sin que se mueva.
+
+Frágil:	Desaparece poco después de ser pisada. Exige avanzar con rapidez.
+
+Oscilatoria:	Se mueve de forma horizontal o vertical. Requiere saltar con precisión.
+
+Rebote:	Impulsa al jugador hacia arriba al tocarla. Útil para alcanzar zonas altas.
+ 
+Reinicio:	Si el jugador cae, entra en contacto con esta área y se reinicia la escena (nivel).
+
 
  ### Imagen Referente
 (Coloca aquí la imagen que ya proporcionaste del nivel. Úsala como referencia visual en tu entrega).
@@ -96,14 +105,14 @@ para guiar al jugador hacia el portal final. Si el jugador cae, reinicia desde e
 ### Nodos principales del nivel (nivel2)
 Node2D: Nodo raíz del nivel.
 
-- Hub
+### 🧩 Hub
 Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye:
 
-- Contador de monedas
+### Contador de monedas
 (Tiene un TextureRect y 2 Label, donde uno muestra la letra “x” y el otro el número “00”):
 Muestra cuántas monedas ha recolectado el jugador (por defecto inicia en "x00").
 
-- Moneda
+### Moneda
 Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
 
 Se incrementa el contador del HUD.
@@ -118,7 +127,7 @@ AnimatedSprite2D: Muestra una animación de la moneda girando.
 
 Se utiliza la señal body_entered para detectar al jugador y ejecutar la recolección.
 
-- reset_area2
+### ⚠️ reset_area2
 Zona que detecta si el jugador cae. Al entrar en ella, se reinicia el nivel.
 
 Incluye:
@@ -126,7 +135,7 @@ Incluye:
 CollisionShape2D: Detecta colisiones.
 
 
-- Portal
+###  🚪 Portal
 Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa.
 
 Contiene:
@@ -135,25 +144,29 @@ AnimatedSprite2D: Le da la animación al portal.
 
 CollisionShape2D: Detecta si el jugador ha llegado al portal.
 
-Personaje
+### 🧍 Personaje
+
 El jugador principal, ubicado inicialmente sobre una de las plataformas. Es controlado por el usuario y
 puede caminar, saltar y recolectar monedas al tocarlas.
 
-Plataforma, Plataforma2, etc.
-Son los elementos sobre los que el jugador se mueve. Están colocadas a distintas alturas y posiciones
-para generar retos de salto y navegación.
+### 🧱 Tipos de Plataformas en el Nivel
+Fija: El jugador puede quedarse sobre ella sin que se mueva.
+
+Frágil:	Desaparece poco después de ser pisada. Exige avanzar con rapidez.
+
+Oscilatoria:	Se mueve de forma horizontal o vertical. Requiere saltar con precisión.
+
+ Rebote:	Impulsa al jugador hacia arriba al tocarla. Útil para alcanzar zonas altas.
+ 
+Reinicio:	Si el jugador cae, entra en contacto con esta área y se reinicia la escena (nivel).
+
 
 Imagen Referente
 (Coloca aquí la imagen del Nivel 1 como referencia visual.)
 
 
 
-  - Tipos de Plataformas en el Nivel
-Fija: El jugador puede quedarse sobre ella sin que se mueva.
-Frágil:	Desaparece poco después de ser pisada. Exige avanzar con rapidez.
-Oscilatoria:	Se mueve de forma horizontal o vertical. Requiere saltar con precisión.
- Rebote:	Impulsa al jugador hacia arriba al tocarla. Útil para alcanzar zonas altas.
-Reinicio:	Si el jugador cae, entra en contacto con esta área y se reinicia la escena (nivel).
+
 
 🖼️ Imagen Referente del Nivel
 (Inserta esta imagen junto a la descripción en tu documento)
@@ -169,7 +182,7 @@ zona de reinicio.
 ### Nodos principales del nivel (nivel2)
 Node2D: Nodo raíz del nivel.
 
-- Hub
+### 🧩 Hub
 Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye:
 
 Contador de monedas
@@ -191,14 +204,14 @@ AnimatedSprite2D: Muestra una animación de la moneda girando.
 
 Se utiliza la señal body_entered para detectar al jugador y ejecutar la recolección.
 
-reset_area3
+### ⚠️ reset_area3
 Zona que detecta si el jugador cae. Al entrar en ella, se reinicia el nivel.
 
 Incluye:
 
 CollisionShape2D: Detecta colisiones.
 
-- Portal
+### 🚪 Portal
 Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa.
 
 Contiene:
@@ -207,12 +220,12 @@ AnimatedSprite2D: Le da la animación al portal.
 
 CollisionShape2D: Detecta si el jugador ha llegado al portal.
 
-Personaje
+### 🧍Personaje
 El jugador principal, ubicado inicialmente sobre una de las plataformas. Es controlado por el usuario y
 puede caminar, saltar y recolectar monedas al tocarlas.
 
 
-- Tipos de Plataformas en el Nivel
+### 🧱 Tipos de Plataformas en el Nivel
 
 Fija: El jugador puede quedarse sobre ella sin que se mueva.
 
@@ -224,13 +237,14 @@ Oscilatoria:	Se mueve de forma horizontal o vertical. Requiere saltar con precis
  
 Reinicio:	Si el jugador cae, entra en contacto con esta área y se reinicia la escena (nivel).
 
-- Diseño del Nivel
+### Diseño del Nivel
+
 El recorrido del jugador incluye múltiples secciones en diferentes alturas. Las monedas colocadas en
  secuencia sirven como referencia visual para saber por dónde avanzar. Las plataformas se distribuyen
  en horizontal, zigzag y verticalmente, aumentando progresivamente la dificultad del salto y el cálculo
  de movimiento.
 
--  Imagen Referente del Nivel
+###  Imagen Referente del Nivel
   
 
 
