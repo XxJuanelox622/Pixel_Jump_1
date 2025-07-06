@@ -2,6 +2,11 @@
 
 #### BY Yaretzy Adali & Juan Carlos
 
+## Descriccion Brebe del juego
+Es un juego De Plataformas Que Esta Desarrollado En Godot. Donde Eres un Vampiro Y Tienes Que Saltar Diferentes Plataformas Como
+(Rebote, Osilatoria, Frajil, Fija Y de Reinicio)  Al Final De Cada Nivel Hay Un Portal Al Tocarlo Te teletramsporta Al Siguiente
+Nivel el Cual Es Mas Dificil Que El Anterior
+
 ## Recursos Utilizados (imagenes, sonidos, etc)
 #### Personaje
 ![Personaje.](https://github.com/XxJuanelox622/Pixel_Jump_1/blob/main/Vampires1_Walk_full.png?raw=true)
@@ -13,14 +18,6 @@
 ![Plataforma.](https://github.com/XxJuanelox622/Pixel_Jump_1/blob/main/Platform.png?raw=true)
 #### Portal
 ![Portal.](https://github.com/XxJuanelox622/Pixel_Jump_1/blob/main/Ship_portal_32x32.png?raw=true)
-
-
-
-
-## Descriccion Brebe del juego
-Es un juego De Plataformas Que Esta Desarrollado En Godot. Donde Eres un Vampiro Y Tienes Que Saltar Diferentes Plataformas Como
-(Rebote, Osilatoria, Frajil, Fija Y de Reinicio)  Al Final De Cada Nivel Hay Un Portal Al Tocarlo Te teletramsporta Al Siguiente
-Nivel el Cual Es Mas Dificil Que El Anterior
 
 ## Caracteristicas
 
