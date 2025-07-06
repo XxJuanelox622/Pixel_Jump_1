@@ -3,6 +3,18 @@
 #### BY Yaretzy Adali & Juan Carlos
 
 ## Recursos Utilizados (imagenes, sonidos, etc)
+### Personaje
+
+### Fondo
+
+### Obejeto
+
+### Plataformas
+
+### Portal
+
+
+
 
 ## Descriccion Brebe del juego
 Es un juego De Plataformas Que Esta Desarrollado En Godot. Donde Eres un Vampiro Y Tienes Que Saltar Diferentes Plataformas Como
@@ -24,4 +36,5 @@ Nivel el Cual Es Mas Dificil Que El Anterior
  -  App: Visual Code & Github
 
    ## Capturas De Pantalla
+   
    
