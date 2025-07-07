@@ -44,7 +44,7 @@ plataformas, monedas, el HUD, zonas especiales y el portal.
 - ( tiene un texturerect y 2 labels donde un label es x y el otro es 00 ): Muestra cuántas monedas ha
 recolectado el jugador (por defecto inicia en "x00").
 
-### Moneda:
+### 🪙 Moneda:
 
 - Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
 
@@ -119,7 +119,7 @@ Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye
 - (Tiene un TextureRect y 2 Label, donde uno muestra la letra “x” y el otro el número “00”)
 Muestra cuántas monedas ha recolectado el jugador (por defecto inicia en "x00").
 
-### Moneda:
+### 🪙 Moneda:
 
 - Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
 
@@ -200,7 +200,7 @@ Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye
 - (Tiene un TextureRect y 2 Label, donde uno muestra la letra “x” y el otro el número “00”):
 Muestra cuántas monedas ha recolectado el jugador (por defecto inicia en "x00").
 
-### Moneda:
+### 🪙 Moneda:
 Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
 
 - Se incrementa el contador del HUD.
@@ -331,7 +331,37 @@ Este objeto representa un ítem coleccionable dentro del nivel. Su función prin
 
   
 
+## 🪙 Contador de Monedas (HUD)
+Este es el sistema que muestra visualmente cuántas monedas ha recolectado el jugador. Es parte de la interfaz gráfica del juego
+y no interactúa directamente con el mundo físico del personaje.
 
+### ⚙️ Estructura del Nodo HUD
+
+### 🧩 Nodo principal:
+
+- 🔹 Hub ( CanvasLayer)
+Nodo base del HUD. Se mantiene fijo en la pantalla sin importar el movimiento de la cámara.
+
+- 🔸 TextureRect:
+Muestra la imagen de la moneda (coin.png) como ícono representativo.
+
+
+- 🔸 Label:
+Texto que indica la cantidad actual de monedas recolectadas. Inicialmente, está en "x00".
+
+
+- 🔸 ContadorMonedas:
+Script conectado que actualiza el número mostrado en el Label conforme se recolectan monedas en el juego.
+
+
+🧠 Funcionamiento
+
+El nodo Hub se instancia en los niveles (ej. Level1) para mantenerse visible siempre.
+
+Cuando el personaje colisiona con una moneda (Area2D), se dispara una señal (_on_puntuacion_actualizada) que 
+llama a una función dentro del script ContadorMonedas.
+
+El Label se actualiza automáticamente para mostrar el nuevo total de monedas.
 
 ## Caracteristicas 
 
