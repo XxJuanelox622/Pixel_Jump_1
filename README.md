@@ -36,13 +36,15 @@ al portal para avnzar de nivel.
 Es el nodo raíz que organiza todos los elementos del nivel. Dentro de este nodo se encuentran el jugador,
 plataformas, monedas, el HUD, zonas especiales y el portal.
 
-### 🧩 Hub
+### 🧩 Hub:
 - Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye:
 
-Contador de monedas ( tiene un texturerect y 2 labels donde un label es x y el otro es 00 ): Muestra cuántas monedas ha recolectado
-el jugador (por defecto inicia en "x00").
+### Contador de monedas:
 
-### Moneda
+- ( tiene un texturerect y 2 labels donde un label es x y el otro es 00 ): Muestra cuántas monedas ha
+recolectado el jugador (por defecto inicia en "x00").
+
+### Moneda:
 
 - Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
 
@@ -58,7 +60,7 @@ el jugador (por defecto inicia en "x00").
 
 - Se utiliza la señal body_entered para detectar al jugador y ejecutar la recolección.
 
-### ⚠️ reset_area
+### ⚠️ reset_area:
 
 - Zona que detecta si el jugador cae. Al entrar en ella,  se reinicie el nivel o se devuelva al jugador
  al punto de inicio. Incluye:
@@ -67,7 +69,7 @@ el jugador (por defecto inicia en "x00").
 
 - Sprite2D: Representación visual del área de reinicio.
 
-###  🚪 Portal
+###  🚪 Portal:
 
 - Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa. Contiene:
 
@@ -75,11 +77,12 @@ el jugador (por defecto inicia en "x00").
 
 - CollisionShape2D: Detecta si el jugador ha llegado al portal.
 
-### 🧍Personaje
+### 🧍Personaje:
+
 - El jugador principal, ubicado inicialmente sobre una de las plataformas. Es controlado por el usuario y
  puede caminar, saltar y recolectar monedas al pasar en ellas.
 
-### 🧱 Tipos de Plataformas en el Nivel
+### 🧱 Tipos de Plataformas en el Nivel:
 
 - Fija: El jugador puede quedarse sobre ella sin que se mueva.
 
@@ -105,18 +108,18 @@ recorrido, se encuentran varias monedas que deben ser recolectadas. Estas moneda
 para guiar al jugador hacia el portal final. Si el jugador cae, reinicia desde el principio gracias a una zona de reinicio.
 
 ### Nodos principales del nivel (nivel2)
-Node2D: Nodo raíz del nivel.
+- Node2D: Nodo raíz del nivel.
 
-### 🧩 Hub
+### 🧩 Hub:
 
 Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye:
 
 ### Contador de monedas
 
-- (Tiene un TextureRect y 2 Label, donde uno muestra la letra “x” y el otro el número “00”):
+- (Tiene un TextureRect y 2 Label, donde uno muestra la letra “x” y el otro el número “00”)
 Muestra cuántas monedas ha recolectado el jugador (por defecto inicia en "x00").
 
-### Moneda
+### Moneda:
 
 - Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
 
@@ -132,7 +135,7 @@ Muestra cuántas monedas ha recolectado el jugador (por defecto inicia en "x00")
 
 - Se utiliza la señal body_entered para detectar al jugador y ejecutar la recolección.
 
-### ⚠️ reset_area2
+### ⚠️ reset_area2:
 
 - Zona que detecta si el jugador cae. Al entrar en ella, se reinicia el nivel.
 
@@ -140,9 +143,9 @@ Muestra cuántas monedas ha recolectado el jugador (por defecto inicia en "x00")
 
 - CollisionShape2D: Detecta colisiones.
 
+###  🚪 Portal:
 
-###  🚪 Portal
-Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa.
+- Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa.
 
 - Contiene:
 
@@ -150,13 +153,14 @@ Representa la salida del nivel. El jugador debe llegar a este punto para complet
 
 - CollisionShape2D: Detecta si el jugador ha llegado al portal.
 
-### 🧍 Personaje
+### 🧍 Personaje:
 
 - El jugador principal, ubicado inicialmente sobre una de las plataformas. Es controlado por el usuario y
 puede caminar, saltar y recolectar monedas al tocarlas.
 
-### 🧱 Tipos de Plataformas en el Nivel
-Fija: El jugador puede quedarse sobre ella sin que se mueva.
+### 🧱 Tipos de Plataformas en el Nivel:
+
+- Fija: El jugador puede quedarse sobre ella sin que se mueva.
 
 - Frágil:	Desaparece poco después de ser pisada. Exige avanzar con rapidez.
 
@@ -189,14 +193,14 @@ zona de reinicio.
 ### Nodos principales del nivel (nivel2)
 Node2D: Nodo raíz del nivel.
 
-### 🧩 Hub
+### 🧩 Hub:
 Este nodo contiene la interfaz gráfica del usuario (HUD). En este nivel incluye:
 
-- Contador de monedas
-(Tiene un TextureRect y 2 Label, donde uno muestra la letra “x” y el otro el número “00”):
+### Contador de monedas
+- (Tiene un TextureRect y 2 Label, donde uno muestra la letra “x” y el otro el número “00”):
 Muestra cuántas monedas ha recolectado el jugador (por defecto inicia en "x00").
 
-### Moneda
+### Moneda:
 Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador toca una moneda:
 
 - Se incrementa el contador del HUD.
@@ -211,7 +215,7 @@ Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador t
 
 - Se utiliza la señal body_entered para detectar al jugador y ejecutar la recolección.
 
-### ⚠️ reset_area3
+### ⚠️ reset_area3:
 
 - Zona que detecta si el jugador cae. Al entrar en ella, se reinicia el nivel.
 
@@ -219,7 +223,7 @@ Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador t
 
 - CollisionShape2D: Detecta colisiones.
 
-### 🚪 Portal
+### 🚪 Portal:
 
 - Representa la salida del nivel. El jugador debe llegar a este punto para completar la etapa.
 
@@ -229,13 +233,13 @@ Objeto coleccionable distribuido a lo largo del nivel. Cada vez que el jugador t
 
 - CollisionShape2D: Detecta si el jugador ha llegado al portal.
 
-### 🧍Personaje
+### 🧍Personaje:
 
 - El jugador principal, ubicado inicialmente sobre una de las plataformas. Es controlado por el usuario y
 puede caminar, saltar y recolectar monedas al tocarlas.
 
 
-### 🧱 Tipos de Plataformas en el Nivel
+### 🧱 Tipos de Plataformas en el Nivel:
 
 - Fija: El jugador puede quedarse sobre ella sin que se mueva.
 
@@ -258,17 +262,21 @@ a medida que avanza por los niveles.
 
 ### ⚙️ Estructura del Nodo Personaje
 
-- 🧩 Nodo principal:
-Personaje (Es un CharacterBody2D )
+### 🧩 Nodo principal:
 
-- 🟦 CollisionShape2D:
-Define el área de colisión del personaje, lo que permite detectar plataformas, objetos y otros elementos.
+- Personaje (Es un CharacterBody2D )
 
-- 🖼️ Sprite2D:
-Representa gráficamente al personaje (disedeño del personaje.
+### 🟦 CollisionShape2D:
 
-- 🎥 Camera2D:
-Sigue al personaje a lo largo del nivel para mantenerlo centrado en pantalla.
+- Define el área de colisión del personaje, lo que permite detectar plataformas, objetos y otros elementos.
+
+ ### 🖼️ Sprite2D:
+ 
+- Representa gráficamente al personaje (disedeño del personaje.
+
+### 🎥 Camera2D:
+
+- Sigue al personaje a lo largo del nivel para mantenerlo centrado en pantalla.
 
 ### 🎮 Comportamiento
 - El personaje responde al teclado para moverse a izquierda y derecha.
@@ -279,11 +287,49 @@ Sigue al personaje a lo largo del nivel para mantenerlo centrado en pantalla.
 
 - Al caer en el área de reinicio, el nivel se reinicia automáticamente.
 
-🖼️ Imagen Referente
+🖼️ Imagen Referente:
 ![Captura de pantalla 2025-07-06 220045](https://github.com/user-attachments/assets/5f24d614-7abc-42d1-bfe9-4ebd82a79589)
 
 
 
+## 🪙 Objeto: 
+Este objeto representa un ítem coleccionable dentro del nivel. Su función principal es aumentar el contador de monedas del jugador al ser recolectada. Se encuentra repartida por el escenario como parte del reto del nivel.
+
+### ⚙️ Estructura del Nodo Moneda
+
+### 🧩 Nodo principal:
+
+- Moneda (tipo Area2D)
+  
+- Es el nodo raíz del objeto. Permite detectar cuándo el jugador entra en contacto con la moneda mediante colisiones.
+
+###  🎞️ AnimatedSprite2D:
+
+- Muestra la animación de la moneda girando o brillando.
+
+- Utiliza texture animation, es decir, una secuencia de imágenes (spritesheet o múltiples frames)
+-  que simulan movimiento o rotación.
+
+- Mejora la visibilidad y atractivo del objeto en pantalla.
+
+### 🟦 CollisionShape2D:
+
+- Define el área en la que se detecta al jugador.
+
+- Al entrar el personaje, se activa la señal body_entered.
+
+- Esta señal se conecta para:
+
+- Aumentar el contador de monedas.
+
+- Reproducir un efecto visual o de sonido (opcional).
+
+- Eliminar o desactivar la moneda.
+
+  🖼️ Imagen Referente:
+  ![Captura de pantalla 2025-07-06 220906](https://github.com/user-attachments/assets/eb5d975c-4b45-4053-a0b1-00a281402a7c)
+
+  
 
 
 
