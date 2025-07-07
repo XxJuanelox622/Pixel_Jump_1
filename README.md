@@ -547,6 +547,78 @@ func oscilar():
 func picos():
 	get_tree().reload_current_scene()
 ```
+
+## Script de Moneda (moneda.gd)
+Este script permite que una moneda detecte al jugador, sume un punto al contador de puntuación y luego desaparezca.
+
+
+```gdscript
+# =============================
+# 🔗 REFERENCIA AL CONTADOR
+# =============================
+# Se asume que hay un nodo llamado "Contador" en el árbol principal que tiene un método incrementa_un_punto()
+@onready var contador: Node = %Contador
+
+# =============================
+# 🧍 DETECCIÓN DE COLISIÓN CON EL JUGADOR
+# =============================
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("jugador"):  # Solo el jugador puede recoger la moneda
+		contador.incrementa_un_punto()  # Suma un punto al contador
+		queue_free()  # Elimina la moneda de la escena
+```
+
+## Script de Contador de Monedas (contador.gd)
+Este script administra la puntuación del jugador (como monedas recolectadas) y emite una señal cada vez que se incrementa, permitiendo a otros nodos (como un HUD) reaccionar y actualizar su información en pantalla.
+
+
+```gdscript
+# =============================
+# 💾 VARIABLE DE PUNTUACIÓN
+# =============================
+# Lleva el conteo total de puntos o monedas recolectadas
+var puntuacion = 0 
+
+# =============================
+# 📡 SEÑAL PERSONALIZADA
+# =============================
+# Se emite cada vez que cambia la puntuación
+signal puntuacion_actualizada(puntuacion_actual: int)
+
+# =============================
+# ➕ MÉTODO PARA AÑADIR PUNTOS
+# =============================
+func incrementa_un_punto():
+	puntuacion += 1
+	puntuacion_actualizada.emit(puntuacion)  # Notifica a los nodos conectados
+```
+
+## Script del HUD de Monedas (hud_monedas.gd)
+Este script se encarga de mostrar el número actual de monedas recogidas por el jugador utilizando una Label en la interfaz (CanvasLayer). Escucha una señal desde un nodo contador y actualiza el texto.
+
+```gdscript
+# =============================
+# 🔢 REFERENCIA A LA ETIQUETA DE MONEDAS
+# =============================
+@onready var contador_monedas: Label = $ContadorMonedas
+
+# =============================
+# 🚀 INICIALIZACIÓN Y CONEXIÓN DE SEÑAL
+# =============================
+func _ready() -> void:
+	# Busca el nodo Contador (se espera que se llame "Contador" y esté en el árbol de escena)
+	var contador = get_node("%Contador")
+	
+	# Conecta la señal personalizada "puntuacion_actualizada" del contador a este script
+	contador.puntuacion_actualizada.connect(_on_puntuacion_actualizada)
+
+# =============================
+# 📈 ACTUALIZACIÓN DE TEXTO EN PANTALLA
+# =============================
+func _on_puntuacion_actualizada(puntuacion_actual: int) -> void:
+	# Convierte la puntuación a texto y la asigna al Label
+	contador_monedas.text = str(puntuacion_actual)
+```
  ## 🛠️ Tecnologias
  - Motor:Godot Engine [Version]
  -  Lenguajes: GDScript
