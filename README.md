@@ -253,7 +253,8 @@ puede caminar, saltar y recolectar monedas al tocarlas.
 
 
 ## 🧍‍♂️ Personaje
-Este es el jugador principal del juego, controlado por el usuario. Puede caminar, saltar y recolectar monedas a medida que avanza por los niveles.
+Este es el jugador principal del juego controlado por el usuario. Puede caminar, saltar y recolectar monedas al pasar por ellas
+a medida que avanza por los niveles.
 
 ### ⚙️ Estructura del Nodo Personaje
 
@@ -279,6 +280,7 @@ Sigue al personaje a lo largo del nivel para mantenerlo centrado en pantalla.
 - Al caer en el área de reinicio, el nivel se reinicia automáticamente.
 
 🖼️ Imagen Referente
+![Captura de pantalla 2025-07-06 220045](https://github.com/user-attachments/assets/5f24d614-7abc-42d1-bfe9-4ebd82a79589)
 
 
 
@@ -286,6 +288,7 @@ Sigue al personaje a lo largo del nivel para mantenerlo centrado en pantalla.
 
 
 ## Caracteristicas 
+
  ## 🛠️ Tecnologias
  - Motor:Godot Engine [Version]
  -  Lenguajes: GDScript
