@@ -293,7 +293,8 @@ a medida que avanza por los niveles.
 
 
 ## 🪙 Objeto: 
-Este objeto representa un ítem coleccionable dentro del nivel. Su función principal es aumentar el contador de monedas del jugador al ser recolectada. Se encuentra repartida por el escenario como parte del reto del nivel.
+Este objeto representa un ítem coleccionable dentro del nivel. Su función principal es 
+aumentar el contador de monedas del jugador al ser recolectada. Se encuentra repartida por el escenario como parte del reto del nivel.
 
 ### ⚙️ Estructura del Nodo Moneda
 
@@ -363,6 +364,7 @@ llama a una función dentro del script ContadorMonedas.
 
 El Label se actualiza automáticamente para mostrar el nuevo total de monedas.
  🖼️ Imagen Referente:
+![Captura de pantalla 2025-07-06 222133](https://github.com/user-attachments/assets/31e98f5f-cb0d-4520-9e13-ace478a4289a)
 
 
 ## Descripción de los códigos empleados para el funcionamiento (EL CÓDIGO DEBE VENIR CON COMENTARIOS)
@@ -370,7 +372,8 @@ El Label se actualiza automáticamente para mostrar el nuevo total de monedas.
 
 ##🧍‍♂️ Script del Personaje – Pixel Jump
 
-Este script controla al jugador en un juego de plataformas 2D. Permite moverse, saltar, recolectar monedas, reiniciar el nivel y cambiar entre escenas mediante portales.
+Este script controla al jugador en un juego de plataformas 2D. Permite moverse, saltar, recolectar monedas, 
+reiniciar el nivel y cambiar entre escenas mediante portales.
 
 ```gdscript
 extends CharacterBody2D
@@ -454,8 +457,11 @@ func _on_portal_2_body_exited(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://Level0.tscn")
 ```
 
+
 ## 🧱 Script de Plataforma (plataforma.gd)
-Este script define el comportamiento de diferentes tipos de plataformas interactivas en un juego 2D hecho en Godot Engine 4. Cada plataforma puede tener distintos efectos como rebotar, desaparecer, dañar al jugador o moverse.
+Este script define el comportamiento de diferentes tipos de plataformas interactivas
+en un juego 2D hecho en Godot Engine 4. Cada plataforma puede tener distintos efectos como
+rebotar, desaparecer, dañar al jugador o moverse.
 
 
 ```gdscript
@@ -568,8 +574,10 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()  # Elimina la moneda de la escena
 ```
 
+
 ## Script de Contador de Monedas (contador.gd)
-Este script administra la puntuación del jugador (como monedas recolectadas) y emite una señal cada vez que se incrementa, permitiendo a otros nodos (como un HUD) reaccionar y actualizar su información en pantalla.
+Este script administra la puntuación del jugador (como monedas recolectadas) y emite una señal
+cada vez que se incrementa, permitiendo a otros nodos (como un HUD) reaccionar y actualizar su información en pantalla.
 
 
 ```gdscript
@@ -593,8 +601,10 @@ func incrementa_un_punto():
 	puntuacion_actualizada.emit(puntuacion)  # Notifica a los nodos conectados
 ```
 
+
 ## Script del HUD de Monedas (hud_monedas.gd)
-Este script se encarga de mostrar el número actual de monedas recogidas por el jugador utilizando una Label en la interfaz (CanvasLayer). Escucha una señal desde un nodo contador y actualiza el texto.
+Este script se encarga de mostrar el número actual de monedas recogidas por el jugador utilizando
+una Label en la interfaz (CanvasLayer). Escucha una señal desde un nodo contador y actualiza el texto.
 
 ```gdscript
 # =============================
@@ -619,11 +629,24 @@ func _on_puntuacion_actualizada(puntuacion_actual: int) -> void:
 	# Convierte la puntuación a texto y la asigna al Label
 	contador_monedas.text = str(puntuacion_actual)
 ```
- ## 🛠️ Tecnologias
- - Motor:Godot Engine [Version]
- -  Lenguajes: GDScript
- -  Plataforma: Windows
-    
-   ## Capturas De Pantalla
-   
-   
+
+
+ ## Redactar de manera detallada por integrante, las dificultades que se tuvieron al usar las herramientas colaborativas
+
+### Juan Carlos
+Lo que más me costó fue aprender a usar Visual Studio Code, porque nunca antes lo había usado. Al 
+principio me sentía un poco perdido, no sabía cómo moverme bien ni para qué servía la terminal. Pero 
+con el tiempo y práctica, ya me siento mucho más cómodo trabajando con él.
+
+### Yaretzy Adalí
+Para mí fue complicado usar GitHub y Visual Studio Code al mismo tiempo. No me aparecía el comando 
+“clone” y no sabía cómo descargar el proyecto ni manejar bien el editor. Además, tenía miedo de hacer
+algo mal y afectar el trabajo de Juan Carlos. Pero poco a poco, con su ayuda, fui entendiendo mejor y 
+ahora me siento más segura.
+
+ 
+## Una breve conclusión del uso e importancia de las herramientas colaborativas para el programador.
+Las herramientas colaborativas son súper importantes para los programadores porque hacen que trabajar
+en equipo sea mucho más fácil. Nos ayudan a compartir el código, evitar errores y mantener todo organizado
+, incluso si no estamos en el mismo lugar. Usarlas bien hace que el trabajo sea más rápido y nos permite 
+aprender unos de otros. En pocas palabras, son clave para hacer buen software y crecer como programador.   
