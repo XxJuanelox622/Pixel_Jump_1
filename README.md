@@ -96,6 +96,7 @@ el jugador (por defecto inicia en "x00").
 ![Captura de pantalla 2025-07-06 010949](https://github.com/user-attachments/assets/07382910-72e9-43b6-9d6c-d7ba98c0cdd3)
 
 
+
 ## 🎮 Nivel 1  
 
 
@@ -177,6 +178,7 @@ Imagen Referente
 ![Captura de pantalla 2025-07-06 021040](https://github.com/user-attachments/assets/20c087dc-c5b9-4e75-9a6c-815a5d9bbbe2)
 
 
+
 ## 🎮 Nivel 2 
 
 En este nivel más extenso y desafiante, el jugador debe recorrer una ruta llena de plataformas,
@@ -248,6 +250,37 @@ puede caminar, saltar y recolectar monedas al tocarlas.
 
 ###  Imagen Referente del Nivel
   ![Captura de pantalla 2025-07-06 130451](https://github.com/user-attachments/assets/0be9e0fc-4cd1-432b-ad96-3373d740190f)
+
+
+## 🧍‍♂️ Personaje
+Este es el jugador principal del juego, controlado por el usuario. Puede caminar, saltar y recolectar monedas a medida que avanza por los niveles.
+
+### ⚙️ Estructura del Nodo Personaje
+
+- 🧩 Nodo principal:
+Personaje (Es un CharacterBody2D )
+
+- 🟦 CollisionShape2D:
+Define el área de colisión del personaje, lo que permite detectar plataformas, objetos y otros elementos.
+
+- 🖼️ Sprite2D:
+Representa gráficamente al personaje (disedeño del personaje.
+
+- 🎥 Camera2D:
+Sigue al personaje a lo largo del nivel para mantenerlo centrado en pantalla.
+
+### 🎮 Comportamiento
+- El personaje responde al teclado para moverse a izquierda y derecha.
+
+- Puede saltar sobre plataformas.
+
+- Al tocar una moneda (Area2D), activa una señal que incrementa el contador de monedas.
+
+- Al caer en el área de reinicio, el nivel se reinicia automáticamente.
+
+🖼️ Imagen Referente
+
+
 
 
 
