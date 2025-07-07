@@ -362,9 +362,191 @@ Cuando el personaje colisiona con una moneda (Area2D), se dispara una señal (_o
 llama a una función dentro del script ContadorMonedas.
 
 El Label se actualiza automáticamente para mostrar el nuevo total de monedas.
+ 🖼️ Imagen Referente:
 
-## Caracteristicas 
 
+## Descripción de los códigos empleados para el funcionamiento (EL CÓDIGO DEBE VENIR CON COMENTARIOS)
+
+
+##🧍‍♂️ Script del Personaje – Pixel Jump
+
+Este script controla al jugador en un juego de plataformas 2D. Permite moverse, saltar, recolectar monedas, reiniciar el nivel y cambiar entre escenas mediante portales.
+
+```gdscript
+extends CharacterBody2D
+
+# =============================
+# 🧠 VARIABLES DE MOVIMIENTO
+# =============================
+
+# Velocidad horizontal del jugador
+var velocidad = 200
+
+# Fuerza del salto (negativo porque en Godot hacia arriba es negativo en Y)
+var brinco = -400
+
+# Gravedad que se aplica cuando el jugador está en el aire
+var gravedad = 1000
+
+# =============================
+# 🟢 INICIO DE LA ESCENA
+# =============================
+
+func _ready():
+	# Añade este nodo al grupo "jugador"
+	add_to_group("jugador")
+
+# =============================
+# 🕹️ MOVIMIENTO Y FÍSICA
+# =============================
+
+func _physics_process(delta):
+	# Detectar dirección horizontal con teclas de entrada (ui_left, ui_right)
+	var direccion = Input.get_axis("ui_left", "ui_right")
+	
+	# Aplicar la velocidad horizontal
+	velocity.x = direccion * velocidad
+	
+	# Si no está en el suelo, aplicar gravedad
+	if not is_on_floor():
+		velocity.y += gravedad * delta
+	
+	# Si se presiona la tecla de salto y está en el suelo, aplicar salto
+	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+		velocity.y = brinco
+	
+	# Ejecutar el movimiento con deslizamiento y colisiones
+	move_and_slide()
+
+# =============================
+# 🔁 REINICIAR NIVEL
+# =============================
+# Estas funciones se activan cuando el jugador entra o sale de una zona de reinicio
+
+@warning_ignore("unused_parameter")
+func _on_reset_area_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene() # Reinicia la escena actual
+
+@warning_ignore("unused_parameter")
+func _on_reset_area_2_body_entered(body: Node2D) -> void:
+	get_tree().reload_current_scene()
+
+@warning_ignore("unused_parameter")
+func _on_reset_area_3_body_exited(body: Node2D) -> void:
+	get_tree().reload_current_scene()
+
+
+# =============================
+# 🚪 CAMBIO DE NIVEL CON PORTALES
+# =============================
+
+# Portal del Nivel 0 al Nivel 1
+@warning_ignore("unused_parameter")
+func   _on_Portal_body_entered(body: Node2D) -> void:
+	get_ tree().change_scene_to_file("res://Level1.tscn")
+
+# Portal del Nivel 1 al Nivel 2
+func _on_portal1_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Level2.tscn")
+
+# Portal del Nivel 2 al Nivel 0 (reinicio del ciclo)
+func _on_portal_2_body_exited(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://Level0.tscn")
+```
+
+## 🧱 Script de Plataforma (plataforma.gd)
+Este script define el comportamiento de diferentes tipos de plataformas interactivas en un juego 2D hecho en Godot Engine 4. Cada plataforma puede tener distintos efectos como rebotar, desaparecer, dañar al jugador o moverse.
+
+
+```gdscript
+extends Area2D
+
+# =============================
+# 🎛️ ENUMERACIÓN DE TIPOS DE PLATAFORMA
+# =============================
+# Define los tipos de plataforma disponibles
+enum TipoPlataforma {FIJA, OSCILATORIA, FRAGIL, REBOTE, PICOS}
+
+# =============================
+# ⚙️ VARIABLES EXPORTADAS
+# =============================
+
+# Tipo de plataforma seleccionado desde el editor
+@export var tipo: TipoPlataforma = TipoPlataforma.FIJA
+
+# Fuerza de rebote para plataformas del tipo REBOTE
+@export var fuerza_rebote := 2.0
+
+# =============================
+# 🚀 INICIALIZACIÓN
+# =============================
+
+func _ready():
+	actualizar_plataforma()  # Establece el color y comportamiento según el tipo
+	monitorable = true       # Habilita la detección de colisiones con cuerpos
+	monitoring = true
+
+# =============================
+# 🎨 ACTUALIZACIÓN DE APARIENCIA Y COMPORTAMIENTO
+# =============================
+
+func actualizar_plataforma():
+	match tipo:
+		TipoPlataforma.FIJA:
+			$Sprite2D.modulate = Color.GREEN  # Plataforma estática
+		TipoPlataforma.OSCILATORIA:
+			$Sprite2D.modulate = Color.BLUE   # Plataforma que se mueve horizontalmente
+			oscilar()
+		TipoPlataforma.FRAGIL:
+			$Sprite2D.modulate = Color.RED    # Plataforma que desaparece al tocarla
+		TipoPlataforma.REBOTE:
+			$Sprite2D.modulate = Color.AQUA   # Plataforma que impulsa al jugador
+		TipoPlataforma.PICOS:
+			$Sprite2D.modulate = Color.PURPLE # Plataforma que reinicia el nivel
+
+# =============================
+# 📦 DETECCIÓN DE COLISIONES
+# =============================
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("jugador"):
+		match tipo:
+
+			# Plataforma frágil se destruye tras 0.5 segundos
+			TipoPlataforma.FRAGIL:
+				await get_tree().create_timer(0.5).timeout
+				queue_free()
+
+			# Plataforma con picos reinicia la escena
+			TipoPlataforma.PICOS:
+				get_tree().reload_current_scene()
+
+			# Plataforma con rebote impulsa al jugador hacia arriba
+			TipoPlataforma.REBOTE:
+				# Si el cuerpo tiene un método personalizado para rebotar, úsalo
+				if body.has_method("puede_rebotar"):
+					body.puede_rebotar(fuerza_rebote)
+				# Si no, aplica el rebote directamente
+				else:
+					body.velocity.y = body.brinco * fuerza_rebote
+
+# =============================
+# ↔️ MOVIMIENTO DE PLATAFORMA OSCILATORIA
+# =============================
+
+func oscilar():
+	var tween = create_tween()
+	tween.tween_property(self, "position:x", position.x + 100, 2)
+	tween.tween_property(self, "position:x", position.x - 100, 2)
+	tween.set_loops()  # Bucle infinito de ida y vuelta
+
+# =============================
+# ☠️ MÉTODO DE PELIGRO EXTRA (NO SE USA PERO ESTÁ DEFINIDO)
+# =============================
+
+func picos():
+	get_tree().reload_current_scene()
+```
  ## 🛠️ Tecnologias
  - Motor:Godot Engine [Version]
  -  Lenguajes: GDScript
