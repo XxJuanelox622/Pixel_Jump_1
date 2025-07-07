@@ -58,7 +58,7 @@ el jugador (por defecto inicia en "x00").
 
 - Se utiliza la señal body_entered para detectar al jugador y ejecutar la recolección.
 
-### reset_area
+### ⚠️ reset_area
 
 - Zona que detecta si el jugador cae. Al entrar en ella,  se reinicie el nivel o se devuelva al jugador
  al punto de inicio. Incluye:
@@ -93,7 +93,8 @@ el jugador (por defecto inicia en "x00").
 
 
  ### Imagen Referente
-(Coloca aquí la imagen que ya proporcionaste del nivel. Úsala como referencia visual en tu entrega).
+![Captura de pantalla 2025-07-06 010949](https://github.com/user-attachments/assets/07382910-72e9-43b6-9d6c-d7ba98c0cdd3)
+
 
 ## 🎮 Nivel 1  
 
@@ -172,8 +173,8 @@ Imagen Referente
 
 
 
-🖼️ Imagen Referente del Nivel
-(Inserta esta imagen junto a la descripción en tu documento)
+ ### Imagen Referente
+![Captura de pantalla 2025-07-06 021040](https://github.com/user-attachments/assets/20c087dc-c5b9-4e75-9a6c-815a5d9bbbe2)
 
 
 ## 🎮 Nivel 2 
@@ -246,7 +247,8 @@ puede caminar, saltar y recolectar monedas al tocarlas.
 
 
 ###  Imagen Referente del Nivel
-  
+  ![Captura de pantalla 2025-07-06 130451](https://github.com/user-attachments/assets/0be9e0fc-4cd1-432b-ad96-3373d740190f)
+
 
 
 
